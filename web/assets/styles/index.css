@@ -1,35 +1,92 @@
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
   display: flex;
-  align-items: space-between;
+  height: 100vh;
   flex-direction: column;
-  background-color: rgba(255, 0, 0, 0.5);
-  background-image: url("/assets/circuit-board.svg");
-  background-size: contain;
+  background-color: #232830;
   overflow: hidden;
+  font-family: new-order, sans-serif;
+  font-style: medium;
+  font-weight: 400;
+  color: #eeeeee;
+  cursor: default;
 }
 
-nav {
-  width: 98%;
+.title {
+  height: 50vh;
   display: flex;
-  justify-content: space-around;
-  color: white;
-  margin: 1%;
-  background-color: rgba(160, 160, 160, 0.5);
-  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
 }
 
-.websiteTitle {
-  font-size: 250%;
+h1 {
+  margin: 0px;
+}
+
+.nav {
+  height: 50vh;
   display: flex;
-  margin: 1%;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-html {
-  width: 100%;
-  height: 100%;
+.yellow-button {
+  background-color: #ffd369;
+  color: #eeeeee;
+  height: 10vh;
+  width: 25vw;
+  border-radius: 5vh;
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+}
+
+.yellow-button:hover {
+  background-color: #eeeeee;
+  color: #ffd369;
+  height: 10vh;
+  width: 25vw;
+  border-radius: 5vh;
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+  cursor: pointer;
+}
+
+.dark-button {
+  background-color: #393e46;
+  color: #eeeeee;
+  height: 10vh;
+  width: 25vw;
+  border-radius: 5vh;
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+}
+
+.dark-button:hover {
+  background-color: #393e46;
+  color: #ffd369;
+  height: 10vh;
+  width: 25vw;
+  border-radius: 5vh;
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 10vmin;
+}
+
+h3 {
+  margin: 0px;
+  align-items: center;
+  display: flex;
+  font-size: 5vmin;
 }/*# sourceMappingURL=index.css.map */

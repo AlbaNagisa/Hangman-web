@@ -1,0 +1,52 @@
+@import "./Templates/mixin";
+@import "./Templates/variable";
+
+body {
+  @include body-el(0, 0, column, $backColor);
+  color: #eeeeee;
+  justify-content: space-between;
+}
+
+.topPart {
+  height: 30vh;
+}
+
+.middlePart {
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5vmax;
+}
+
+.errorMessage {
+  padding-left: 3vmax;
+  font-size: 4vmax;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  margin: 0px;
+  font-family: new-order, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+h5 {
+  margin: 0px;
+  font-family: new-order, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.bottomPart {
+  height: 30vh;
+  text-align: center;
+}
+
+// html {
+//   width: 100%;
+//   height: 100%;
+// }

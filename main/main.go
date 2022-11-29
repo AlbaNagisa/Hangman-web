@@ -13,6 +13,14 @@ func main() {
 
 	fileServer := http.FileServer(http.Dir("./web/assets"))
 	http.Handle("/assets/", http.StripPrefix("/assets/", fileServer))
+
+	dir, _ := os.Getwd()
+	files, _ := os.ReadDir(dir + "/web/static")
+	var fichier []string
+	for _, file := range files {
+		fichier = append(fichier, file.Name()[:len(file.Name())-5])
+	}
+
 	var d HangmanModule.HangManData
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		var templateshtml = template.Must(template.ParseGlob("./web/static/*.html"))
@@ -24,38 +32,28 @@ func main() {
 			d = HangmanModule.SetHangman()
 			http.Redirect(w, r, "/jeu", http.StatusFound)
 		default:
-			dir, _ := os.Getwd()
-			files, _ := os.ReadDir(dir + "/web/static")
 			exist := false
-			for _, file := range files {
-				if strings.Contains(r.URL.Path, ".html") {
-					if strings.Contains(r.URL.Path, file.Name()) {
-						exist = true
-						break
-					}
-				} else {
-					if strings.Contains(r.URL.Path+".html", file.Name()) {
-						exist = true
-						break
-					}
+			for i := 0; i < len(fichier); i++ {
+				if strings.Contains(r.URL.Path, fichier[i]) {
+					exist = true
+					break
 				}
 			}
 			if !exist {
-				templateshtml.ExecuteTemplate(w, "404.html", "")
+				http.Redirect(w, r, "/404", http.StatusFound)
+			}
+			if strings.Contains(r.URL.Path, ".html") {
+				templateshtml.ExecuteTemplate(w, r.URL.Path[1:], d)
 			} else {
-				if strings.Contains(r.URL.Path, ".html") {
-					templateshtml.ExecuteTemplate(w, r.URL.Path[1:], d)
-				} else {
-					templateshtml.ExecuteTemplate(w, r.URL.Path[1:]+".html", d)
-				}
+				templateshtml.ExecuteTemplate(w, r.URL.Path[1:]+".html", d)
 			}
 
 		}
 	})
 
-	log.Println("Starting server at port 5050")
+	log.Println("Starting server at port 8080")
 
-	if err := http.ListenAndServe(":5050", nil); err != nil {
+	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal(err)
 	}
 }

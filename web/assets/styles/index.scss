@@ -1,35 +1,57 @@
+@import "./Templates/_mixin";
+@import "./Templates/variable";
+
 body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+  @include body-el(0, 0, column, $backColor);
+  color: $fontColor;
+  cursor: default;
+}
+
+.title {
+  height: 50vh;
   display: flex;
-  align-items: space-between;
   flex-direction: column;
-  background-color: rgba(255, 0, 0, 0.5);
-  background-image: url("/assets/circuit-board.svg");
-  background-size: contain;
-  overflow: hidden;
+  align-items: center;
+  justify-content: end;
 }
 
-nav {
-  width: 98%;
+h1 {
+  margin: 0px;
+}
+
+.nav {
+  height: 50vh;
   display: flex;
-  justify-content: space-around;
-  color: white;
-  margin: 1%;
-  background-color: rgba(160, 160, 160, 0.5);
-  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.websiteTitle {
-  font-size: 250%;
+.yellow-button {
+  @include button(25vw, $yellow, $fontColor);
+}
+
+.yellow-button:hover {
+  @include button(25vw, $fontColor, $yellow);
+  cursor: pointer;
+}
+
+.dark-button {
+  @include button(25vw, $containerBackColor, $fontColor);
+}
+
+.dark-button:hover {
+  @include button(25vw, $containerBackColor, $yellow);
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 10vmin;
+}
+
+h3 {
+  margin: 0px;
+  align-items: center;
   display: flex;
-  margin: 1%;
-  flex-direction: row;
-}
-
-html {
-  width: 100%;
-  height: 100%;
+  font-size: 5vmin;
 }
