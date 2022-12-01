@@ -18,10 +18,12 @@
   $height,
   $display,
   $backColor,
-  $borderRadius
+  $borderRadius,
+  $color
 ) {
   margin: $margin;
   width: $width;
+  color: $color;
   height: $height;
   display: $display;
   background-color: $backColor;
@@ -32,6 +34,7 @@
   width: $width;
   height: $height;
   transform: rotate($degre);
+  border-radius: 5vh;
 }
 
 @mixin button($width, $backColor, $fontColor) {

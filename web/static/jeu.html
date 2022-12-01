@@ -11,13 +11,41 @@
   <body>
     <div class="container">
       <div class="button">
-        <div class="fleche">
+        <div
+          style="display: flex; justify-content: center; align-items: center"
+        >
           <div class="topLine"></div>
           <div class="middleLine"></div>
           <div class="bottomLine"></div>
         </div>
       </div>
       <h1 style="margin-left: 2vw; color: #eeeeee">Partie en cours</h1>
+    </div>
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+      "
+    >
+      <div></div>
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          width: 65%;
+        "
+      >
+        {{range .Alphabet}}
+        <div class="keyButton">
+          <h2>{{.}}</h2>
+        </div>
+        {{end}}
+      </div>
     </div>
   </body>
 </html>
