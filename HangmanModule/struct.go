@@ -6,6 +6,7 @@ type HangManData struct {
 	Attempts int    // Essais restants
 	Tries    []rune // Lettres testees
 	Name     string // Nom de la backup
+	Alphabet []string
 }
 
 type MenuLoc []struct {

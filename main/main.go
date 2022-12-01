@@ -13,6 +13,7 @@ func main() {
 
 	fileServer := http.FileServer(http.Dir("./web/assets"))
 	http.Handle("/assets/", http.StripPrefix("/assets/", fileServer))
+	var d HangmanModule.HangManData
 
 	dir, _ := os.Getwd()
 	files, _ := os.ReadDir(dir + "/web/static")
@@ -21,7 +22,7 @@ func main() {
 		fichier = append(fichier, file.Name()[:len(file.Name())-5])
 	}
 
-	var d HangmanModule.HangManData
+	d.Alphabet = []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		var templateshtml = template.Must(template.ParseGlob("./web/static/*.html"))
 

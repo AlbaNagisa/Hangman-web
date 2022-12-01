@@ -15,15 +15,19 @@ body {
 .button {
   margin: 0;
   width: 5rem;
+  color: #eeeeee;
   height: 5rem;
   display: flex;
   background-color: #393e46;
-  border-radius: 50px;
+  border-radius: 25px;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
   margin: 0;
   width: 92vw;
+  color: #eeeeee;
   height: 10vh;
   display: flex;
   background-color: #232830;
@@ -39,32 +43,56 @@ h1 {
   overflow-wrap: break-word;
 }
 
+h2 {
+  font-size: 3rem;
+}
+
 .topLine {
   width: 1.5rem;
-  height: 0.1rem;
-  transform: rotate(-45deg);
-  margin-left: 1.2rem;
-  margin-top: 1.2rem;
+  height: 0.3rem;
+  transform: rotate(-35deg);
+  border-radius: 5vh;
   background-color: white;
+  margin-top: -0.8rem;
+  margin-left: -1.2rem;
   position: absolute;
 }
 
 .middleLine {
-  width: 1.5rem;
-  height: 0.1rem;
+  width: 2rem;
+  height: 0.3rem;
   transform: rotate(0deg);
-  margin-left: 1.2rem;
+  border-radius: 5vh;
   background-color: white;
-  align-items: center;
-  justify-items: center;
+  position: absolute;
 }
 
 .bottomLine {
   width: 1.5rem;
-  height: 0.1rem;
-  transform: rotate(90deg);
-  margin-left: 1.2rem;
-  margin-top: 1.2rem;
+  height: 0.3rem;
+  transform: rotate(35deg);
+  border-radius: 5vh;
   background-color: white;
+  margin-top: 0.6rem;
+  margin-left: -1.2rem;
   position: absolute;
+}
+
+.keyButton {
+  margin: 0;
+  width: 5rem;
+  color: #eeeeee;
+  height: 5rem;
+  display: flex;
+  background-color: #ffd369;
+  border-radius: 40px;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem;
+}
+
+.keyButton:hover {
+  color: #ffd369;
+  background-color: #eeeeee;
+  cursor: pointer;
 }/*# sourceMappingURL=jeu.css.map */

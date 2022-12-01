@@ -6,11 +6,21 @@ body {
 }
 
 .button {
-  @include container(0, 5rem, 5rem, flex, $containerBackColor, 50px);
+  @include container(
+    0,
+    5rem,
+    5rem,
+    flex,
+    $containerBackColor,
+    40px,
+    $fontColor
+  );
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
-  @include container(0, 92vw, 10vh, flex, $backColor, 0);
+  @include container(0, 92vw, 10vh, flex, $backColor, 0, $fontColor);
   margin-top: 5rem;
   flex-direction: row;
   align-items: center;
@@ -22,25 +32,40 @@ h1 {
   overflow-wrap: break-word;
 }
 
+h2 {
+  font-size: 3rem;
+}
+
 .topLine {
-  @include line(1.5rem, 0.1rem, -45deg);
-  margin-left: 1.2rem;
-  margin-top: 1.2rem;
+  @include line(1.5rem, 0.3rem, -35deg);
   background-color: white;
+  margin-top: -0.8rem;
+  margin-left: -1.2rem;
   position: absolute;
 }
 .middleLine {
-  @include line(1.5rem, 0.1rem, 0deg);
-  margin-left: 1.2rem;
+  @include line(2rem, 0.3rem, 0deg);
   background-color: white;
-  align-items: center;
-  justify-items: center;
+  position: absolute;
 }
 
 .bottomLine {
-  @include line(1.5rem, 0.1rem, 90deg);
-  margin-left: 1.2rem;
-  margin-top: 1.2rem;
+  @include line(1.5rem, 0.3rem, 35deg);
   background-color: white;
+  margin-top: 0.6rem;
+  margin-left: -1.2rem;
   position: absolute;
+}
+
+.keyButton {
+  @include container(0, 5rem, 5rem, flex, $yellow, 40px, $fontColor);
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem;
+}
+
+.keyButton:hover {
+  color: $yellow;
+  background-color: $fontColor;
+  cursor: pointer;
 }
