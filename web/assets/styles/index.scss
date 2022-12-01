@@ -17,6 +17,7 @@ body {
 
 h1 {
   margin: 0px;
+  font-size: 10vmin;
 }
 
 .nav {
@@ -29,24 +30,24 @@ h1 {
 
 .yellow-button {
   @include button(25vw, $yellow, $fontColor);
+  text-decoration: none;
 }
 
 .yellow-button:hover {
   @include button(25vw, $fontColor, $yellow);
+  text-decoration: none;
   cursor: pointer;
 }
 
 .dark-button {
   @include button(25vw, $containerBackColor, $fontColor);
+  text-decoration: none;
 }
 
 .dark-button:hover {
   @include button(25vw, $containerBackColor, $yellow);
+  text-decoration: none;
   cursor: pointer;
-}
-
-h1 {
-  font-size: 10vmin;
 }
 
 h3 {
