@@ -20,11 +20,24 @@ body {
 }
 
 .container {
-  @include container(0, 92vw, 10vh, flex, $backColor, 0, $fontColor);
+  width: 80rem;
+  color: $fontColor;
+  display: flex;
+  background-color: $backColor;
   margin-top: 5rem;
-  flex-direction: row;
+  flex-direction: column;
+  margin-left: 3rem;
+}
+.wordContainer {
+  @include container(0, 70rem, 10vh, flex, $containerBackColor, 0, $fontColor);
+  margin-top: 5rem;
+  border-radius: 5rem;
   align-items: center;
-  margin-left: 8vw;
+  justify-content: center;
+  h2 {
+    font-size: 5rem;
+    letter-spacing: 1rem;
+  }
 }
 
 h1 {
@@ -32,8 +45,9 @@ h1 {
   overflow-wrap: break-word;
 }
 
-h2 {
-  font-size: 3rem;
+a {
+  font-size: 2rem;
+  text-decoration: none;
 }
 
 .topLine {

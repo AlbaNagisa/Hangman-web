@@ -19,23 +19,37 @@ body {
   height: 5rem;
   display: flex;
   background-color: #393e46;
-  border-radius: 25px;
+  border-radius: 40px;
   align-items: center;
   justify-content: center;
 }
 
 .container {
+  width: 80rem;
+  color: #eeeeee;
+  display: flex;
+  background-color: #232830;
+  margin-top: 5rem;
+  flex-direction: column;
+  margin-left: 3rem;
+}
+
+.wordContainer {
   margin: 0;
-  width: 92vw;
+  width: 70rem;
   color: #eeeeee;
   height: 10vh;
   display: flex;
-  background-color: #232830;
+  background-color: #393e46;
   border-radius: 0;
   margin-top: 5rem;
-  flex-direction: row;
+  border-radius: 5rem;
   align-items: center;
-  margin-left: 8vw;
+  justify-content: center;
+}
+.wordContainer h2 {
+  font-size: 5rem;
+  letter-spacing: 1rem;
 }
 
 h1 {
@@ -43,8 +57,9 @@ h1 {
   overflow-wrap: break-word;
 }
 
-h2 {
-  font-size: 3rem;
+a {
+  font-size: 2rem;
+  text-decoration: none;
 }
 
 .topLine {

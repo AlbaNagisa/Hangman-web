@@ -10,40 +10,35 @@
   </head>
   <body>
     <div class="container">
-      <div class="button">
-        <div
-          style="display: flex; justify-content: center; align-items: center"
-        >
-          <div class="topLine"></div>
-          <div class="middleLine"></div>
-          <div class="bottomLine"></div>
-        </div>
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          height: 100%;
+          align-items: center;
+        "
+      >
+        <div class="button">{{ template "Fleche" .}}</div>
+        <h1 style="margin-left: 2vw; color: #eeeeee">Partie en cours</h1>
       </div>
-      <h1 style="margin-left: 2vw; color: #eeeeee">Partie en cours</h1>
-    </div>
-    <div
-      style="
-        display: flex;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        justify-content: center;
-      "
-    >
-      <div></div>
+
+      <div class="wordContainer" style="margin-top: -1rem">
+        <h2>{{.Word}}</h2>
+      </div>
+      <!-- fleche + container -->
       <div
         style="
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
-          align-items: center;
-          width: 65%;
+          width: 75rem;
+          margin-top: 1rem;
         "
       >
         {{range .Alphabet}}
-        <div class="keyButton">
+        <a class="keyButton" href="/hangman?letter={{.}}">
           <h2>{{.}}</h2>
-        </div>
+        </a>
         {{end}}
       </div>
     </div>
