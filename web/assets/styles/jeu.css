@@ -4,7 +4,7 @@ body {
   width: 100vw;
   display: flex;
   height: 100vh;
-  flex-direction: column;
+  flex-direction: row;
   background-color: #232830;
   overflow: hidden;
   font-family: new-order, sans-serif;
@@ -14,9 +14,9 @@ body {
 
 .button {
   margin: 0;
-  width: 5rem;
+  width: 7vh;
   color: #eeeeee;
-  height: 5rem;
+  height: 7vh;
   display: flex;
   background-color: #393e46;
   border-radius: 40px;
@@ -25,24 +25,25 @@ body {
 }
 
 .container {
-  width: 80rem;
+  width: 60vw;
   color: #eeeeee;
   display: flex;
   background-color: #232830;
-  margin-top: 5rem;
+  margin-top: 4vh;
   flex-direction: column;
-  margin-left: 3rem;
+  margin-left: 3vw;
+  margin-bottom: 4vh;
 }
 
 .wordContainer {
   margin: 0;
-  width: 70rem;
+  width: 58vw;
   color: #eeeeee;
   height: 10vh;
   display: flex;
   background-color: #393e46;
   border-radius: 0;
-  margin-top: 5rem;
+  margin-top: 5vh;
   border-radius: 5rem;
   align-items: center;
   justify-content: center;
@@ -95,19 +96,44 @@ a {
 
 .keyButton {
   margin: 0;
-  width: 5rem;
+  width: 7vh;
   color: #eeeeee;
-  height: 5rem;
+  height: 7vh;
   display: flex;
   background-color: #ffd369;
   border-radius: 40px;
   justify-content: center;
   align-items: center;
-  margin: 1.5rem;
+  margin: 2vh;
 }
 
 .keyButton:hover {
   color: #ffd369;
   background-color: #eeeeee;
+  cursor: pointer;
+}
+
+.input {
+  border-radius: 3rem;
+  width: 80%;
+  background-color: #393e46;
+  color: #eeeeee;
+  font-size: 4rem;
+  text-align: center;
+  border: none;
+}
+
+.inputButton {
+  background-color: #393e46;
+  border: none;
+  color: #eeeeee;
+  font-size: 3rem;
+  border-radius: 3rem;
+  padding: 1vh;
+  text-align: center;
+}
+
+.inputButton:hover {
+  background-color: #ffd369;
   cursor: pointer;
 }/*# sourceMappingURL=jeu.css.map */
