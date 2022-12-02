@@ -2,35 +2,28 @@
 @import "./Templates/variable";
 
 body {
-  @include body-el(0, 0, column, $backColor);
+  @include body-el(0, 0, row, $backColor);
 }
 
 .button {
-  @include container(
-    0,
-    5rem,
-    5rem,
-    flex,
-    $containerBackColor,
-    40px,
-    $fontColor
-  );
+  @include container(0, 7vh, 7vh, flex, $containerBackColor, 40px, $fontColor);
   align-items: center;
   justify-content: center;
 }
 
 .container {
-  width: 80rem;
+  width: 60vw;
   color: $fontColor;
   display: flex;
   background-color: $backColor;
-  margin-top: 5rem;
+  margin-top: 4vh;
   flex-direction: column;
-  margin-left: 3rem;
+  margin-left: 3vw;
+  margin-bottom: 4vh;
 }
 .wordContainer {
-  @include container(0, 70rem, 10vh, flex, $containerBackColor, 0, $fontColor);
-  margin-top: 5rem;
+  @include container(0, 58vw, 10vh, flex, $containerBackColor, 0, $fontColor);
+  margin-top: 5vh;
   border-radius: 5rem;
   align-items: center;
   justify-content: center;
@@ -72,14 +65,38 @@ a {
 }
 
 .keyButton {
-  @include container(0, 5rem, 5rem, flex, $yellow, 40px, $fontColor);
+  @include container(0, 7vh, 7vh, flex, $yellow, 40px, $fontColor);
   justify-content: center;
   align-items: center;
-  margin: 1.5rem;
+  margin: 2vh;
 }
 
 .keyButton:hover {
   color: $yellow;
   background-color: $fontColor;
+  cursor: pointer;
+}
+
+.input {
+  border-radius: 3rem;
+  width: 80%;
+  background-color: $containerBackColor;
+  color: $fontColor;
+  font-size: 4rem;
+  text-align: center;
+  border: none;
+}
+.inputButton {
+  background-color: $containerBackColor;
+  border: none;
+  color: $fontColor;
+  font-size: 3rem;
+  border-radius: 3rem;
+  padding: 1vh;
+  text-align: center;
+}
+
+.inputButton:hover {
+  background-color: $yellow;
   cursor: pointer;
 }

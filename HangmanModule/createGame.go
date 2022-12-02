@@ -13,7 +13,7 @@ func SetHangman() HangManData {
 }
 
 /*
-Transforme le mot en mot a deux lettre avec des tirets
+Transforme le mot en mot avec lettre avec des tirets
 */
 func CreateWordWith_(w string) string {
 	var ts []rune
