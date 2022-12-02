@@ -1,0 +1,91 @@
+@import "./Templates/_mixin";
+@import "./Templates/variable";
+
+body {
+  @include body-el(0, 0, column, $backColor);
+  color: $fontColor;
+  cursor: default;
+}
+
+.button {
+  @include button(10vh, $containerBackColor, $yellow);
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+    @include button(10vh, $yellow, $containerBackColor);
+}
+
+.button:hover .topLine {
+    background-color: $containerBackColor;
+}
+
+.button:hover .middleLine {
+    background-color: $containerBackColor;
+}
+
+.button:hover .bottomLine {
+    background-color: $containerBackColor;
+}
+
+.topLine {
+  @include line(1.5rem, 0.3rem, -35deg);
+  background-color: $yellow;
+  margin-top: -0.8rem;
+  margin-left: -1.2rem;
+  position: absolute;
+}
+
+.middleLine {
+  @include line(2rem, 0.3rem, 0deg);
+  background-color: $yellow;
+  position: absolute;
+}
+
+.bottomLine {
+  @include line(1.5rem, 0.3rem, 35deg);
+  background-color: $yellow;
+  margin-top: 0.6rem;
+  margin-left: -1.2rem;
+  position: absolute;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    margin: 0px;
+    font-size: 10vmin;
+}
+
+.levelsBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+
+h3 {
+  margin: 0px;
+  align-items: center;
+  display: flex;
+  font-size: 7vmin;
+}
+
+a {
+  margin: 3vmin;
+}
+
+.yellow-button {
+  @include button(25vw, $yellow, $fontColor);
+  text-decoration: none;
+}
+
+.yellow-button:hover {
+  @include button(25vw, $fontColor, $yellow);
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles/levels.css" />
     <title>Document</title>
 </head>
 <body>
-    
+    <a class="button" href="/">
+        {{ template "Fleche" .}}
+    </a>
+    <header>
+        <h1>Niveaux</h1>
+    </header>
+    <div class="levelsBox">
+        <a href="/setup?level=easy" class="yellow-button">
+            <h3>Facile</h3>
+        </a>
+        <a href="/setup?level=medium" class="yellow-button">
+            <h3>Moyen</h3>
+        </a>
+        <a href="/setup?level=hard" class="yellow-button">
+            <h3>Difficile</h3>
+        </a>
+    </div>
 </body>
 </html>

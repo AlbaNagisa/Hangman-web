@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #232830;
+  overflow: hidden;
+  font-family: new-order, sans-serif;
+  font-style: medium;
+  font-weight: 400;
+  color: #eeeeee;
+  cursor: default;
+}
+
+.button {
+  background-color: #393e46;
+  color: #ffd369;
+  height: 10vh;
+  width: 10vh;
+  border-radius: 5vh;
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+  -webkit-text-decoration-color: #393e46;
+          text-decoration-color: #393e46;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  background-color: #ffd369;
+  color: #393e46;
+  height: 10vh;
+  width: 10vh;
+  border-radius: 5vh;
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+  -webkit-text-decoration-color: #ffd369;
+          text-decoration-color: #ffd369;
+}
+
+.button:hover .topLine {
+  background-color: #393e46;
+}
+
+.button:hover .middleLine {
+  background-color: #393e46;
+}
+
+.button:hover .bottomLine {
+  background-color: #393e46;
+}
+
+.topLine {
+  width: 1.5rem;
+  height: 0.3rem;
+  transform: rotate(-35deg);
+  border-radius: 5vh;
+  background-color: #ffd369;
+  margin-top: -0.8rem;
+  margin-left: -1.2rem;
+  position: absolute;
+}
+
+.middleLine {
+  width: 2rem;
+  height: 0.3rem;
+  transform: rotate(0deg);
+  border-radius: 5vh;
+  background-color: #ffd369;
+  position: absolute;
+}
+
+.bottomLine {
+  width: 1.5rem;
+  height: 0.3rem;
+  transform: rotate(35deg);
+  border-radius: 5vh;
+  background-color: #ffd369;
+  margin-top: 0.6rem;
+  margin-left: -1.2rem;
+  position: absolute;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  margin: 0px;
+  font-size: 10vmin;
+}
+
+.levelsBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+
+h3 {
+  margin: 0px;
+  align-items: center;
+  display: flex;
+  font-size: 7vmin;
+}
+
+a {
+  margin: 3vmin;
+}
+
+.yellow-button {
+  background-color: #ffd369;
+  color: #eeeeee;
+  height: 10vh;
+  width: 25vw;
+  border-radius: 5vh;
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+  -webkit-text-decoration-color: #ffd369;
+          text-decoration-color: #ffd369;
+  text-decoration: none;
+}
+
+.yellow-button:hover {
+  background-color: #eeeeee;
+  color: #ffd369;
+  height: 10vh;
+  width: 25vw;
+  border-radius: 5vh;
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+  -webkit-text-decoration-color: #eeeeee;
+          text-decoration-color: #eeeeee;
+  text-decoration: none;
+  cursor: pointer;
+}/*# sourceMappingURL=levels.css.map */
