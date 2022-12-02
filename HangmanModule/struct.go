@@ -1,11 +1,11 @@
 package HangmanModule
 
 type HangManData struct {
-	Word     string // Mot affiche
-	ToFind   string // Mot complet
-	Attempts int    // Essais restants
-	Tries    []rune // Lettres testees
-	Name     string // Nom de la backup
+	Word     string   // Mot affiche
+	ToFind   string   // Mot complet
+	Attempts int      // Essais restants
+	Tries    []string // Lettres testees
+	Name     string   // Nom de la backup
 	Alphabet []string
 }
 

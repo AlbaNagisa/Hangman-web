@@ -8,6 +8,7 @@ func SetHangman() HangManData {
 	d.ToFind = RandomWord()
 	d.Attempts = 10
 	d.Word = CreateWordWith_(d.ToFind)
+	d.Alphabet = []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
 	return d
 }
 

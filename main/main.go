@@ -22,15 +22,18 @@ func main() {
 		fichier = append(fichier, file.Name()[:len(file.Name())-5])
 	}
 
-	d.Alphabet = []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		var templateshtml = template.Must(template.ParseGlob("./web/static/*.html"))
-
 		switch r.URL.Path {
 		case "/":
 			templateshtml.ExecuteTemplate(w, "index.html", d)
 		case "/setup":
 			d = HangmanModule.SetHangman()
+			http.Redirect(w, r, "/jeu", http.StatusFound)
+		case "/hangman":
+			if r.URL.Query().Get("letter") != "" {
+				d.Tries = append(d.Tries, r.URL.Query().Get("letter"))
+			}
 			http.Redirect(w, r, "/jeu", http.StatusFound)
 		default:
 			exist := false
@@ -47,6 +50,7 @@ func main() {
 				templateshtml.ExecuteTemplate(w, r.URL.Path[1:], d)
 			} else {
 				templateshtml.ExecuteTemplate(w, r.URL.Path[1:]+".html", d)
+
 			}
 
 		}
