@@ -55,19 +55,19 @@ body {
 }
 
 .topLine {
-  width: 1.5rem;
-  height: 0.3rem;
+  width: 1.5vmax;
+  height: 0.3vmax;
   transform: rotate(-35deg);
   border-radius: 5vh;
   background-color: #ffd369;
-  margin-top: -0.8rem;
-  margin-left: -1.2rem;
+  margin-top: -0.8vmax;
+  margin-left: -1.2vmax;
   position: absolute;
 }
 
 .middleLine {
-  width: 2rem;
-  height: 0.3rem;
+  width: 2vmax;
+  height: 0.3vmax;
   transform: rotate(0deg);
   border-radius: 5vh;
   background-color: #ffd369;
@@ -75,13 +75,13 @@ body {
 }
 
 .bottomLine {
-  width: 1.5rem;
-  height: 0.3rem;
+  width: 1.5vmax;
+  height: 0.3vmax;
   transform: rotate(35deg);
   border-radius: 5vh;
   background-color: #ffd369;
-  margin-top: 0.6rem;
-  margin-left: -1.2rem;
+  margin-top: 0.6vmax;
+  margin-left: -1.2vmax;
   position: absolute;
 }
 

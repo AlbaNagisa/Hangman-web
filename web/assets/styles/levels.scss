@@ -30,24 +30,24 @@ body {
 }
 
 .topLine {
-  @include line(1.5rem, 0.3rem, -35deg);
+  @include line(1.5vmax, 0.3vmax, -35deg);
   background-color: $yellow;
-  margin-top: -0.8rem;
-  margin-left: -1.2rem;
+  margin-top: -0.8vmax;
+  margin-left: -1.2vmax;
   position: absolute;
 }
 
 .middleLine {
-  @include line(2rem, 0.3rem, 0deg);
+  @include line(2vmax, 0.3vmax, 0deg);
   background-color: $yellow;
   position: absolute;
 }
 
 .bottomLine {
-  @include line(1.5rem, 0.3rem, 35deg);
+  @include line(1.5vmax, 0.3vmax, 35deg);
   background-color: $yellow;
-  margin-top: 0.6rem;
-  margin-left: -1.2rem;
+  margin-top: 0.6vmax;
+  margin-left: -1.2vmax;
   position: absolute;
 }
 
