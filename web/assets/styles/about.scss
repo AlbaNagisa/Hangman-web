@@ -1,0 +1,74 @@
+@import "./Templates/mixin";
+@import "./Templates/variable";
+
+body {
+  @include body-el(0, 0, row, #0a0b24);
+  justify-content: center;
+  align-items: center;
+}
+/* button {
+  font-family: "Lato";
+  padding: 10px;
+  color: #62d9b7;
+  font-size: 50px;
+  background: transparent;
+  border: 1px solid #62d9b7;
+  transition: 1s ease-in-out;
+}
+
+button:hover {
+  background: #62d9b7;
+  border: 1px solid #62d9b7;
+  color: #242626;
+  transition: 0.6s linear;
+  box-shadow: 0px 0px 50px #62d9b7;
+} */
+
+a {
+  font-family: "Lato";
+  position: relative;
+  color: #62d9b7;
+
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #62d9b7;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 50px;
+  span {
+    position: relative;
+    z-index: 1;
+  }
+}
+/* a:before {
+  content: "";
+  position: absolute;
+
+  top: 5px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 12px);
+  background: #0a0b24;
+  transition: 0.5s ease-in-out;
+  transform: scaleY(1);
+}
+
+a:hover:before {
+  transform: scaleY(0);
+} */
+
+a:after {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  height: calc(100% - 4px);
+  width: calc(100% - 4px);
+  background: red;
+  transition: 0.5s ease;
+  transform: scale(1, 1);
+}
+
+a:hover:after {
+  transform: scale(0, 0);
+}
