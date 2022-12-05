@@ -7,6 +7,7 @@ type HangManData struct {
 	Tries    []string // Lettres testees
 	Name     string   // Nom de la backup
 	Alphabet []string //un alphabet wesh
+	Win      bool
 }
 
 type MenuLoc []struct {

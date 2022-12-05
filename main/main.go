@@ -32,18 +32,24 @@ func main() {
 			d = HangmanModule.SetHangman()
 			http.Redirect(w, r, "/jeu", http.StatusFound)
 		case "/hangman":
-			log.Println(r.Method)
 			if r.Method == "POST" {
 				word := r.FormValue("word")
 				if word != "" {
-					log.Println(word)
+					check(d.ToFind, word, &d)
 				}
 			} else {
 				letter := r.URL.Query().Get("letter")
-
 				if letter != "" {
 					check(d.ToFind, letter, &d)
+
 				}
+			}
+			if d.Attempts <= 0 {
+				http.Redirect(w, r, "/fin", http.StatusFound)
+			}
+			if d.ToFind == d.Word {
+				d.Win = true
+				http.Redirect(w, r, "/fin", http.StatusFound)
 			}
 			http.Redirect(w, r, "/jeu", http.StatusFound)
 		default:
@@ -58,7 +64,7 @@ func main() {
 				http.Redirect(w, r, "/404", http.StatusFound)
 			}
 
-			if len(d.Alphabet) == 0 && r.URL.Path == "/jeu" {
+			if len(d.Alphabet) == 0 && (r.URL.Path == "/jeu" || r.URL.Path == "/fin") {
 				http.Redirect(w, r, "/setup", http.StatusFound)
 			}
 
@@ -84,7 +90,6 @@ func check(word, input string, d *HangmanModule.HangManData) {
 	found := false
 	foundUsed := false
 	input = strings.ToLower(input)
-	log.Println(d)
 	if len(input) == 1 {
 		for i, x := range word {
 			for _, u := range d.Tries {
@@ -103,6 +108,18 @@ func check(word, input string, d *HangmanModule.HangManData) {
 				}
 			}
 		}
+
+	} else {
+		if len(input) > 1 {
+			if word == input {
+				ts = []rune(d.ToFind)
+
+			} else {
+				d.Attempts -= 2
+
+			}
+		}
 	}
+	log.Println(string(ts))
 	d.Word = string(ts)
 }
