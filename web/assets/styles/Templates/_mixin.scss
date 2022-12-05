@@ -2,8 +2,8 @@
   margin: $margin;
   padding: $padding;
   width: 100vw;
-  display: flex;
   height: 100vh;
+  display: flex;
   flex-direction: $flexDirection;
   background-color: $backColor;
   overflow: hidden;
@@ -18,7 +18,6 @@
   $height,
   $display,
   $backColor,
-  $borderRadius,
   $color
 ) {
   margin: $margin;
@@ -27,24 +26,24 @@
   height: $height;
   display: $display;
   background-color: $backColor;
-  border-radius: $borderRadius;
+  border-radius: $height / 2;
 }
 
 @mixin line($width, $height, $degre) {
   width: $width;
   height: $height;
   transform: rotate($degre);
-  border-radius: 5vh;
+  border-radius: 5vmin;
 }
 
-@mixin button($width, $backColor, $fontColor) {
+@mixin button($width, $height, $backColor, $fontColor) {
   background-color: $backColor;
   color: $fontColor;
-  height: 10vh;
+  height: $height;
   width: $width;
-  border-radius: 5vh;
+  border-radius: $height/2;
   display: flex;
   justify-content: center;
-  margin: 2vh;
+  margin: 2vmin;
   text-decoration-color: $backColor;
 }

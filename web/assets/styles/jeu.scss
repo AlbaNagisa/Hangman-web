@@ -5,70 +5,119 @@ body {
   @include body-el(0, 0, row, $backColor);
 }
 
-.button {
-  @include container(0, 7vh, 7vh, flex, $containerBackColor, 40px, $fontColor);
-  align-items: center;
-  justify-content: center;
-}
-
-.container {
-  width: 60vw;
+.left-part {
+  width: 70vw;
   color: $fontColor;
   display: flex;
   background-color: $backColor;
-  margin-top: 4vh;
   flex-direction: column;
-  margin-left: 3vw;
-  margin-bottom: 4vh;
 }
-.wordContainer {
-  @include container(0, 58vw, 10vh, flex, $containerBackColor, 0, $fontColor);
-  margin-top: 5vh;
-  border-radius: 5rem;
+
+.right-part {
+  width: 30vw;
+  color: $fontColor;
+  display: flex;
+  background-color: $backColor;
+  flex-direction: column;
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
+}
+
+.left-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  @include button(8vmin, 8vmin, $containerBackColor, $yellow);
   align-items: center;
   justify-content: center;
-  h2 {
-    font-size: 5rem;
-    letter-spacing: 1rem;
-  }
 }
 
-h1 {
-  font-size: 5rem;
-  overflow-wrap: break-word;
+.button:hover {
+  @include button(8vmin, 8vmin, $yellow, $containerBackColor);
 }
 
-a {
-  font-size: 2rem;
-  text-decoration: none;
+.button:hover .topLine {
+  background-color: $containerBackColor;
+}
+
+.button:hover .middleLine {
+  background-color: $containerBackColor;
+}
+
+.button:hover .bottomLine {
+  background-color: $containerBackColor;
 }
 
 .topLine {
-  @include line(1.5rem, 0.3rem, -35deg);
-  background-color: white;
-  margin-top: -0.8rem;
-  margin-left: -1.2rem;
+  @include line(2.4vmin, 0.5vmin, -40deg);
+  background-color: $yellow;
+  margin-top: -1.3vmin;
+  margin-left: -2vmin;
   position: absolute;
 }
+
 .middleLine {
-  @include line(2rem, 0.3rem, 0deg);
-  background-color: white;
+  @include line(3vmin, 0.5vmin, 0deg);
+  background-color: $yellow;
   position: absolute;
 }
 
 .bottomLine {
-  @include line(1.5rem, 0.3rem, 35deg);
-  background-color: white;
-  margin-top: 0.6rem;
-  margin-left: -1.2rem;
+  @include line(2.4vmin, 0.5vmin, 40deg);
+  background-color: $yellow;
+  margin-top: 1.3vmin;
+  margin-left: -2vmin;
   position: absolute;
 }
 
-.keyButton {
-  @include container(0, 7vh, 7vh, flex, $yellow, 40px, $fontColor);
+.clavier {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
+  width: 60vw;
+  margin-top: 7vmin;
+  h2 {
+    letter-spacing: 0px;
+  }
+}
+
+.wordContainer {
+  @include container(0, 60vw, 10vh, flex, $containerBackColor, $fontColor);
+  margin-top: 5vmin;
+  border-radius: 5vmin;
   align-items: center;
-  margin: 2vh;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 7vmin;
+  overflow-wrap: break-word;
+  margin: 0;
+}
+
+h2 {
+  margin: 0px;
+  font-size: 5vmin;
+  justify-content: center;
+  letter-spacing: 1vmin;
+}
+
+a {
+  font-size: 2vmin;
+  text-decoration: none;
+}
+
+.keyButton {
+  @include button(7vmin, 7vmin, $yellow, $fontColor);
+  align-items: center;
+  margin: 2vmin;
 }
 
 .keyButton:hover {
@@ -77,12 +126,18 @@ a {
   cursor: pointer;
 }
 
+.keyButton:click {
+  color: $fontColor;
+  background-color: $containerBackColor;
+  cursor: pointer;
+}
+
 .input {
-  border-radius: 3rem;
+  border-radius: 3vmin;
   width: 80%;
   background-color: $containerBackColor;
   color: $fontColor;
-  font-size: 4rem;
+  font-size: 4vmin;
   text-align: center;
   border: none;
 }
@@ -90,13 +145,21 @@ a {
   background-color: $containerBackColor;
   border: none;
   color: $fontColor;
-  font-size: 3rem;
-  border-radius: 3rem;
-  padding: 1vh;
+  font-size: 3vmin;
+  border-radius: 3vmin;
+  padding: 1vmin;
   text-align: center;
 }
 
 .inputButton:hover {
   background-color: $yellow;
   cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+  margin-top: 5vmin;
+  justify-content: space-between;
 }

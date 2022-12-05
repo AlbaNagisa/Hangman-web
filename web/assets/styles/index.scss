@@ -8,7 +8,7 @@ body {
 }
 
 .title {
-  height: 50vh;
+  height: 50vmin;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +21,7 @@ h1 {
 }
 
 .nav {
-  height: 50vh;
+  height: 50vmin;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,23 +29,23 @@ h1 {
 }
 
 .yellow-button {
-  @include button(25vw, $yellow, $fontColor);
+  @include button(25vmin, 10vmin, $yellow, $fontColor);
   text-decoration: none;
 }
 
 .yellow-button:hover {
-  @include button(25vw, $fontColor, $yellow);
+  @include button(25vmin, 10vmin, $fontColor, $yellow);
   text-decoration: none;
   cursor: pointer;
 }
 
 .dark-button {
-  @include button(25vw, $containerBackColor, $fontColor);
+  @include button(25vmin, 10vmin, $containerBackColor, $fontColor);
   text-decoration: none;
 }
 
 .dark-button:hover {
-  @include button(25vw, $containerBackColor, $yellow);
+  @include button(25vmin, 10vmin, $containerBackColor, $yellow);
   text-decoration: none;
   cursor: pointer;
 }

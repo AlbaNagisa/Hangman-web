@@ -2,8 +2,8 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  display: flex;
   height: 100vh;
+  display: flex;
   flex-direction: column;
   background-color: #232830;
   overflow: hidden;
@@ -15,20 +15,20 @@ body {
 }
 
 .topPart {
-  height: 30vh;
+  height: 30vmin;
 }
 
 .middlePart {
-  height: 30vh;
+  height: 30vmin;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 5vmax;
+  padding: 5vmin;
 }
 
 .errorMessage {
-  padding-left: 3vmax;
-  font-size: 4vmax;
+  padding-left: 3vmin;
+  font-size: 4vmin;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,6 +49,6 @@ h5 {
 }
 
 .bottomPart {
-  height: 30vh;
+  height: 30vmin;
   text-align: center;
 }/*# sourceMappingURL=404.css.map */

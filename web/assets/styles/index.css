@@ -2,8 +2,8 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  display: flex;
   height: 100vh;
+  display: flex;
   flex-direction: column;
   background-color: #232830;
   overflow: hidden;
@@ -15,7 +15,7 @@ body {
 }
 
 .title {
-  height: 50vh;
+  height: 50vmin;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +28,7 @@ h1 {
 }
 
 .nav {
-  height: 50vh;
+  height: 50vmin;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,12 +38,12 @@ h1 {
 .yellow-button {
   background-color: #ffd369;
   color: #eeeeee;
-  height: 10vh;
-  width: 25vw;
-  border-radius: 5vh;
+  height: 10vmin;
+  width: 25vmin;
+  border-radius: 5vmin;
   display: flex;
   justify-content: center;
-  margin: 2vh;
+  margin: 2vmin;
   -webkit-text-decoration-color: #ffd369;
           text-decoration-color: #ffd369;
   text-decoration: none;
@@ -52,12 +52,12 @@ h1 {
 .yellow-button:hover {
   background-color: #eeeeee;
   color: #ffd369;
-  height: 10vh;
-  width: 25vw;
-  border-radius: 5vh;
+  height: 10vmin;
+  width: 25vmin;
+  border-radius: 5vmin;
   display: flex;
   justify-content: center;
-  margin: 2vh;
+  margin: 2vmin;
   -webkit-text-decoration-color: #eeeeee;
           text-decoration-color: #eeeeee;
   text-decoration: none;
@@ -67,12 +67,12 @@ h1 {
 .dark-button {
   background-color: #393e46;
   color: #eeeeee;
-  height: 10vh;
-  width: 25vw;
-  border-radius: 5vh;
+  height: 10vmin;
+  width: 25vmin;
+  border-radius: 5vmin;
   display: flex;
   justify-content: center;
-  margin: 2vh;
+  margin: 2vmin;
   -webkit-text-decoration-color: #393e46;
           text-decoration-color: #393e46;
   text-decoration: none;
@@ -81,12 +81,12 @@ h1 {
 .dark-button:hover {
   background-color: #393e46;
   color: #ffd369;
-  height: 10vh;
-  width: 25vw;
-  border-radius: 5vh;
+  height: 10vmin;
+  width: 25vmin;
+  border-radius: 5vmin;
   display: flex;
   justify-content: center;
-  margin: 2vh;
+  margin: 2vmin;
   -webkit-text-decoration-color: #393e46;
           text-decoration-color: #393e46;
   text-decoration: none;

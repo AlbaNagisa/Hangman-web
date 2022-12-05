@@ -2,8 +2,8 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  display: flex;
   height: 100vh;
+  display: flex;
   flex-direction: row;
   background-color: #0a0b24;
   overflow: hidden;

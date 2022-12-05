@@ -9,59 +9,39 @@
     <title>In game</title>
   </head>
   <body>
-    <div class="container">
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          height: 100%;
-          align-items: center;
-        "
-      >
-        <div class="button">{{ template "Fleche" .}}</div>
-        <h1 style="margin-left: 2vw; color: #eeeeee">Partie en cours</h1>
+    <div class="left-part">
+      <div class="left-header">
+        <a class="button" href="/">{{ template "Fleche" .}}</a>
+        <h1 style="margin-left: 2vmin; color: #eeeeee">Partie en cours</h1>
       </div>
 
-      <div class="wordContainer">
-        <h2>{{.Word}}</h2>
-      </div>
-      <!-- fleche + container -->
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          width: 60vw;
-          margin-top: 7vh;
-        "
-      >
-        {{range .Alphabet}}
-        <a class="keyButton" href="/hangman?letter={{.}}">
-          <h2>{{.}}</h2>
-        </a>
-        {{end}}
-      </div>
+      <div class="left-body">
+        <div class="wordContainer">
+          <h2>{{.Word}}</h2>
+        </div>
+        <!-- fleche + container -->
+        <div  class="clavier">
+          {{range .Alphabet}}
+          <a class="keyButton" href="/hangman?letter={{.}}">
+            <h2>{{.}}</h2>
+          </a>
+          {{end}}
+        </div>
 
-      <form
-        style="
-          display: flex;
-          flex-direction: row;
-          width: 95%;
-          margin-top: 5vh;
-          justify-content: space-between;
-        "
-        action="/hangman"
-        method="post"
-      >
-        <input
-          class="input"
-          name="word"
-          placeholder="Ecrivez un mot"
-          autocomplete="off"
-        />
-        <input type="submit" class="inputButton" />
-      </form>
+        <form
+          action="/hangman"
+          method="post"
+        >
+          <input
+            class="input"
+            name="word"
+            placeholder="Ecrivez un mot"
+            autocomplete="off"
+          />
+          <input type="submit" class="inputButton" />
+        </form>
+      </div>
     </div>
-    <div style="height: 100%">lol</div>
+    <div class="right-part" style="height: 100%">lol</div>
   </body>
 </html>

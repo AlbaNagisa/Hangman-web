@@ -8,46 +8,46 @@ body {
 }
 
 .button {
-  @include button(10vh, $containerBackColor, $yellow);
+  @include button(8vmin, 8vmin, $containerBackColor, $yellow);
   align-items: center;
   justify-content: center;
 }
 
 .button:hover {
-    @include button(10vh, $yellow, $containerBackColor);
+  @include button(8vmin, 8vmin, $yellow, $containerBackColor);
 }
 
 .button:hover .topLine {
-    background-color: $containerBackColor;
+  background-color: $containerBackColor;
 }
 
 .button:hover .middleLine {
-    background-color: $containerBackColor;
+  background-color: $containerBackColor;
 }
 
 .button:hover .bottomLine {
-    background-color: $containerBackColor;
+  background-color: $containerBackColor;
 }
 
 .topLine {
-  @include line(1.5vmax, 0.3vmax, -35deg);
+  @include line(2.4vmin, 0.5vmin, -40deg);
   background-color: $yellow;
-  margin-top: -0.8vmax;
-  margin-left: -1.2vmax;
+  margin-top: -1.3vmin;
+  margin-left: -2vmin;
   position: absolute;
 }
 
 .middleLine {
-  @include line(2vmax, 0.3vmax, 0deg);
+  @include line(3vmin, 0.5vmin, 0deg);
   background-color: $yellow;
   position: absolute;
 }
 
 .bottomLine {
-  @include line(1.5vmax, 0.3vmax, 35deg);
+  @include line(2.4vmin, 0.5vmin, 40deg);
   background-color: $yellow;
-  margin-top: 0.6vmax;
-  margin-left: -1.2vmax;
+  margin-top: 1.3vmin;
+  margin-left: -2vmin;
   position: absolute;
 }
 
@@ -65,14 +65,14 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    height: 75vmin;
 }
 
 h3 {
   margin: 0px;
   align-items: center;
   display: flex;
-  font-size: 7vmin;
+  font-size: 5vmin;
 }
 
 a {
@@ -80,12 +80,12 @@ a {
 }
 
 .yellow-button {
-  @include button(25vw, $yellow, $fontColor);
+  @include button(40vmin, 10vmin, $yellow, $fontColor);
   text-decoration: none;
 }
 
 .yellow-button:hover {
-  @include button(25vw, $fontColor, $yellow);
+  @include button(40vmin, 10vmin, $fontColor, $yellow);
   text-decoration: none;
   cursor: pointer;
 }
