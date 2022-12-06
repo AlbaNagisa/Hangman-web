@@ -29,23 +29,23 @@ h1 {
 }
 
 .yellow-button {
-  @include button(25vmin, 10vmin, $yellow, $fontColor);
+  @include button(40vmin, 10vmin, $yellow, $fontColor);
   text-decoration: none;
 }
 
 .yellow-button:hover {
-  @include button(25vmin, 10vmin, $fontColor, $yellow);
+  @include button(40vmin, 10vmin, $fontColor, $yellow);
   text-decoration: none;
   cursor: pointer;
 }
 
 .dark-button {
-  @include button(25vmin, 10vmin, $containerBackColor, $fontColor);
+  @include button(40vmin, 10vmin, $containerBackColor, $fontColor);
   text-decoration: none;
 }
 
 .dark-button:hover {
-  @include button(25vmin, 10vmin, $containerBackColor, $yellow);
+  @include button(40vmin, 10vmin, $containerBackColor, $yellow);
   text-decoration: none;
   cursor: pointer;
 }

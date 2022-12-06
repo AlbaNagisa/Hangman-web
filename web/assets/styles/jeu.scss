@@ -2,19 +2,21 @@
 @import "./Templates/variable";
 
 body {
-  @include body-el(0, 0, row, $backColor);
+  @include body-el(0, 4%, row, $backColor);
 }
 
 .left-part {
-  width: 70vw;
+  width: 60%;
+  height: 85%;
   color: $fontColor;
   display: flex;
   background-color: $backColor;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .right-part {
-  width: 30vw;
+  width: 40%;
   color: $fontColor;
   display: flex;
   background-color: $backColor;
@@ -27,9 +29,11 @@ body {
 }
 
 .left-body {
+  height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
 }
 
 .button {
@@ -81,19 +85,18 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  width: 60vw;
-  margin-top: 7vmin;
+  width: 100%;
   h2 {
     letter-spacing: 0px;
   }
 }
 
 .wordContainer {
-  @include container(0, 60vw, 10vh, flex, $containerBackColor, $fontColor);
-  margin-top: 5vmin;
+  @include container(0, 100%, 10vh, flex, $containerBackColor, $fontColor);
   border-radius: 5vmin;
   align-items: center;
   justify-content: center;
+  font-style: bold;
 }
 
 h1 {
@@ -133,33 +136,33 @@ a {
 }
 
 .input {
-  border-radius: 3vmin;
+  border-radius: 5vmin;
   width: 80%;
-  background-color: $containerBackColor;
-  color: $fontColor;
-  font-size: 4vmin;
+  height: 8vmin;
+  background-color: $fontColor;
+  color: $backColor;
+  font-size: 3vmin;
   text-align: center;
   border: none;
 }
 .inputButton {
-  background-color: $containerBackColor;
-  border: none;
-  color: $fontColor;
-  font-size: 3vmin;
-  border-radius: 3vmin;
-  padding: 1vmin;
+  @include button(25vmin, 8vmin, $fontColor, $backColor);
+  font-size: 3.5vmin;
+  margin: 0px;
+  margin-left: 2vmin;
   text-align: center;
+  border: none;
 }
 
 .inputButton:hover {
-  background-color: $yellow;
+  background-color: $containerBackColor;
+  color: $yellow;
   cursor: pointer;
 }
 
 form {
   display: flex;
   flex-direction: row;
-  width: 60vw;
-  margin-top: 5vmin;
+  width: 100%;
   justify-content: space-between;
 }

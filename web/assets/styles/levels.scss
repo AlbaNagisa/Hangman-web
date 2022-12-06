@@ -2,7 +2,7 @@
 @import "./Templates/variable";
 
 body {
-  @include body-el(0, 0, column, $backColor);
+  @include body-el(0, 4%, column, $backColor);
   color: $fontColor;
   cursor: default;
 }
