@@ -2,7 +2,7 @@
 @import "./Templates/variable";
 
 body {
-  @include body-el(0, 4%, column, $backColor);
+  @include body-el(4%, 0, column, $backColor);
   color: $fontColor;
   cursor: default;
 }
@@ -61,11 +61,11 @@ h1 {
 }
 
 .levelsBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 75vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vmin;
 }
 
 h3 {

@@ -1,8 +1,8 @@
 @mixin body-el($margin, $padding, $flexDirection, $backColor) {
   margin: $margin;
   padding: $padding;
-  width: 100vw;
-  height: 100vh;
+  width: 100% - ($margin + $padding) * 2;
+  height: 100% - ($margin + $padding) * 2;
   display: flex;
   flex-direction: $flexDirection;
   background-color: $backColor;

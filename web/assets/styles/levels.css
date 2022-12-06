@@ -1,8 +1,8 @@
 body {
-  margin: 0;
-  padding: 4%;
-  width: 100vw;
-  height: 100vh;
+  margin: 4%;
+  padding: 0;
+  width: 92%;
+  height: 92%;
   display: flex;
   flex-direction: column;
   background-color: #232830;
