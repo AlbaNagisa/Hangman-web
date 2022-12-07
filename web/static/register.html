@@ -3,34 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/assets/styles/register.css" />
-    <title>Login</title>
+    <title>Register</title>
   </head>
   <body>
-    <div></div>
-
+    <a class="button" href="/"> {{ template "Fleche" .}} </a>
     <div class="loginContainer">
+        <div class="loginTitle">S'Inscrire</div>
       <form class="form" action="/" method="POST">
         <input
           autocomplete="off"
           name="email"
           type="email"
           class="input"
-          placeholder="ez email"
+          placeholder="Adresse email"
         />
         <input
           autocomplete="off"
           name="pseudo"
           class="input"
-          placeholder="ez pseudo"
+          placeholder="Pseudo"
         />
         <input
           autocomplete="off"
           name="password"
           type="password"
           class="input"
-          placeholder="ez mdp"
+          placeholder="Mot de passe"
         />
-        <input type="submit" class="submit" />
+        <div class="loginButtons">
+          <a href="/login">Se Connecter</a>
+          <input type="submit" class="submit" value="OK" />
+        </div>
       </form>
     </div>
   </body>

@@ -6,23 +6,28 @@
     <title>Login</title>
   </head>
   <body>
+    <a class="button" href="/"> {{ template "Fleche" .}} </a>
     <div class="loginContainer">
+      <div class="loginTitle">Se Connecter</div>
       <form class="form" method="POST">
         <input
           autocomplete="off"
           name="email"
           type="email"
           class="input"
-          placeholder="ez email"
+          placeholder="Adresse email"
         />
         <input
           autocomplete="off"
           name="password"
           type="password"
           class="input"
-          placeholder="ez mdp"
+          placeholder="Mot de passe"
         />
-        <input type="submit" class="submit" />
+        <div class="loginButtons">
+          <a href="/register">S'inscrire ?</a>
+          <input type="submit" class="submit" value="OK" />
+        </div>
       </form>
     </div>
   </body>

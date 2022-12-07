@@ -2,7 +2,6 @@ package Functions
 
 import (
 	"Hangman-web/HangmanModule"
-	"log"
 	"strconv"
 )
 
@@ -64,7 +63,6 @@ func Sort(a *[][]string) {
 func AddToScorboard(i []string, data HangmanModule.Session) {
 	var p HangmanModule.Player
 	pts, _ := strconv.Atoi(i[7])
-	log.Println(i)
 	p = HangmanModule.Player{
 		Pseudo: i[2],
 		Points: pts,
