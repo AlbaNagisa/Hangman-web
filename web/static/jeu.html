@@ -9,7 +9,7 @@
     <title>In game</title>
   </head>
   <body>
-    {{if .Loose}}
+    {{if .Game.Loose}}
     <div class="popup">
       <div class="windowPopup">
         <div class="popupTitles">
@@ -17,7 +17,7 @@
               PERDU
           </div>
           <div class="popupSubTitle">
-            Le mot etait : {{.ToFind}}
+            Le mot etait : {{.Game.ToFind}}
           </div>
         </div>
         <div class="popupButtons">
@@ -34,8 +34,7 @@
         </div>
       </div>
     </div>
-    {{end}}
-    {{if .Win}}
+    {{else if .Game.Win}}
     <div class="popup">
       <div class="windowPopup">
         <div class="popupTitles">
@@ -43,7 +42,7 @@
             GAGNE
           </div>
           <div class="popupSubTitle">
-            Le mot etait : {{.ToFind}}
+            Le mot etait : {{.Game.ToFind}}
           </div>
         </div>
         <div class="popupButtons">
@@ -69,11 +68,11 @@
 
       <div class="left-body">
         <div class="wordContainer">
-          <h2>{{.Word}}</h2>
+          <h2>{{.Game.Word}}</h2>
         </div>
         <!-- fleche + container -->
         <div  class="clavier">
-          {{range .Alphabet}}
+          {{range .Game.Alphabet}}
           <a class="keyButton" href="/hangman?letter={{.}}">
             <h2>{{.}}</h2>
           </a>
@@ -121,5 +120,6 @@
       {{end}} {{end}}
     </div>
     <!-- scoreboard -->
+    <div></div>
   </body>
 </html>

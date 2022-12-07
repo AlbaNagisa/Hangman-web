@@ -40,7 +40,7 @@ func main() {
 			d.Email = r.FormValue("email")
 			csvFile := Functions.CsvReader()
 			for _, line := range csvFile {
-				if strings.ToLower(line[0]) == strings.ToLower(d.Email) {
+				if strings.EqualFold(strings.ToLower(line[0]), strings.ToLower(d.Email)) {
 					if d.Mdp == line[1] {
 						d.Logged = true
 						d.Email = line[0]
@@ -54,7 +54,6 @@ func main() {
 					}
 				}
 			}
-
 		}
 		switch r.URL.Path {
 		case "/":
