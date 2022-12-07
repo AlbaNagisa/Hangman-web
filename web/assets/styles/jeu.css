@@ -57,7 +57,7 @@ body {
   margin: 2vmin;
   -webkit-text-decoration-color: #393e46;
           text-decoration-color: #393e46;
-  box-shadow: 8vmin 8vmin black;
+  box-shadow: 0.5333333333vmin 0.5333333333vmin rgba(0, 0, 0, 0.27);
   align-items: center;
   justify-content: center;
 }
@@ -101,7 +101,7 @@ body {
   margin: 2vmin;
   -webkit-text-decoration-color: #ffd369;
           text-decoration-color: #ffd369;
-  box-shadow: 8vmin 8vmin black;
+  box-shadow: 0.5333333333vmin 0.5333333333vmin rgba(0, 0, 0, 0.27);
 }
 
 .button:hover .topLine {
@@ -129,12 +129,13 @@ body {
 
 .wordContainer {
   margin: 0;
-  width: 100%;
+  width: 96%;
   color: #eeeeee;
   height: 10vh;
   display: flex;
   background-color: #393e46;
   border-radius: 5vh;
+  box-shadow: 0.6666666667vh 0.6666666667vh rgba(0, 0, 0, 0.27);
   border-radius: 5vmin;
   align-items: center;
   justify-content: center;
@@ -170,7 +171,7 @@ a {
   margin: 2vmin;
   -webkit-text-decoration-color: #ffd369;
           text-decoration-color: #ffd369;
-  box-shadow: 7vmin 7vmin black;
+  box-shadow: 0.4666666667vmin 0.4666666667vmin rgba(0, 0, 0, 0.27);
   align-items: center;
   margin: 1vmin;
   margin-top: 2vmin;
@@ -198,6 +199,7 @@ a {
   font-size: 3vmin;
   text-align: center;
   border: none;
+  box-shadow: 0.5333333333vmin 0.5333333333vmin rgba(0, 0, 0, 0.27);
 }
 
 .inputButton {
@@ -211,7 +213,7 @@ a {
   margin: 2vmin;
   -webkit-text-decoration-color: #eeeeee;
           text-decoration-color: #eeeeee;
-  box-shadow: 8vmin 8vmin black;
+  box-shadow: 0.5333333333vmin 0.5333333333vmin rgba(0, 0, 0, 0.27);
   font-size: 3.5vmin;
   margin: 0px;
   margin-left: 2vmin;
@@ -228,6 +230,125 @@ a {
 form {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 98%;
   justify-content: space-between;
+}
+
+.popup {
+  background: rgba(35, 40, 48, 0.1176470588);
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100vh;
+  width: 100vw;
+}
+.popup .windowPopup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: #eeeeee;
+  height: 75%;
+  width: 75%;
+  border-radius: 10vmin;
+  background-color: #393e46;
+}
+
+.popupTitle {
+  margin: 0px;
+  font-size: 15vmin;
+}
+
+.popupTitles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupSubTitle {
+  margin: 0px;
+  font-size: 5vmin;
+  color: #ffd369;
+}
+
+.popupButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.yellow-button {
+  background-color: #ffd369;
+  color: #eeeeee;
+  height: 10vmin;
+  width: 45vmin;
+  border-radius: 5vmin;
+  display: flex;
+  justify-content: center;
+  margin: 2vmin;
+  -webkit-text-decoration-color: #ffd369;
+          text-decoration-color: #ffd369;
+  box-shadow: 0.6666666667vmin 0.6666666667vmin rgba(0, 0, 0, 0.27);
+  text-decoration: none;
+}
+
+.yellow-button:hover {
+  background-color: #393e46;
+  color: #ffd369;
+  height: 10vmin;
+  width: 45vmin;
+  border-radius: 5vmin;
+  display: flex;
+  justify-content: center;
+  margin: 2vmin;
+  -webkit-text-decoration-color: #393e46;
+          text-decoration-color: #393e46;
+  box-shadow: 0.6666666667vmin 0.6666666667vmin rgba(0, 0, 0, 0.27);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.white-button {
+  background-color: #eeeeee;
+  color: #ffd369;
+  height: 10vmin;
+  width: 45vmin;
+  border-radius: 5vmin;
+  display: flex;
+  justify-content: center;
+  margin: 2vmin;
+  -webkit-text-decoration-color: #eeeeee;
+          text-decoration-color: #eeeeee;
+  box-shadow: 0.6666666667vmin 0.6666666667vmin rgba(0, 0, 0, 0.27);
+  text-decoration: none;
+}
+
+.white-button:hover {
+  background-color: #393e46;
+  color: #eeeeee;
+  height: 10vmin;
+  width: 45vmin;
+  border-radius: 5vmin;
+  display: flex;
+  justify-content: center;
+  margin: 2vmin;
+  -webkit-text-decoration-color: #393e46;
+          text-decoration-color: #393e46;
+  box-shadow: 0.6666666667vmin 0.6666666667vmin rgba(0, 0, 0, 0.27);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h3 {
+  margin: 0px;
+  align-items: center;
+  display: flex;
+  font-size: 4vmin;
 }/*# sourceMappingURL=jeu.css.map */

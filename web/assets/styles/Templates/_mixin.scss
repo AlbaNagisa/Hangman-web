@@ -26,6 +26,7 @@
   display: $display;
   background-color: $backColor;
   border-radius: $height / 2;
+  box-shadow: ($height/15) ($height/15) rgba(0, 0, 0, 0.27);
 }
 
 @mixin line($width, $height, $degre) {
@@ -45,5 +46,5 @@
   justify-content: center;
   margin: 2vmin;
   text-decoration-color: $backColor;
-  box-shadow: $height $height black;
+  box-shadow: ($height/15) ($height/15) rgba(0, 0, 0, 0.27);
 }

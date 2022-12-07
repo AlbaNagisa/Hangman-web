@@ -50,7 +50,7 @@ h1 {
   margin: 2vmin;
   -webkit-text-decoration-color: #ffd369;
           text-decoration-color: #ffd369;
-  box-shadow: 10vmin 10vmin black;
+  box-shadow: 0.6666666667vmin 0.6666666667vmin rgba(0, 0, 0, 0.27);
   text-decoration: none;
 }
 
@@ -65,7 +65,7 @@ h1 {
   margin: 2vmin;
   -webkit-text-decoration-color: #eeeeee;
           text-decoration-color: #eeeeee;
-  box-shadow: 10vmin 10vmin black;
+  box-shadow: 0.6666666667vmin 0.6666666667vmin rgba(0, 0, 0, 0.27);
   text-decoration: none;
   cursor: pointer;
 }
@@ -81,7 +81,7 @@ h1 {
   margin: 2vmin;
   -webkit-text-decoration-color: #393e46;
           text-decoration-color: #393e46;
-  box-shadow: 10vmin 10vmin black;
+  box-shadow: 0.6666666667vmin 0.6666666667vmin rgba(0, 0, 0, 0.27);
   text-decoration: none;
 }
 
@@ -96,7 +96,7 @@ h1 {
   margin: 2vmin;
   -webkit-text-decoration-color: #393e46;
           text-decoration-color: #393e46;
-  box-shadow: 10vmin 10vmin black;
+  box-shadow: 0.6666666667vmin 0.6666666667vmin rgba(0, 0, 0, 0.27);
   text-decoration: none;
   cursor: pointer;
 }

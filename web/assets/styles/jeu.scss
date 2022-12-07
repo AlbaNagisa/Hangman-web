@@ -95,7 +95,7 @@ body {
 }
 
 .wordContainer {
-  @include container(0, 100%, 10vh, flex, $containerBackColor, $fontColor);
+  @include container(0, 96%, 10vh, flex, $containerBackColor, $fontColor);
   border-radius: 5vmin;
   align-items: center;
   justify-content: center;
@@ -149,7 +149,9 @@ a {
   font-size: 3vmin;
   text-align: center;
   border: none;
+  box-shadow: (8vmin/15) (8vmin/15) rgba(0, 0, 0, 0.27);
 }
+
 .inputButton {
   @include button(25vmin, 8vmin, $fontColor, $backColor);
   font-size: 3.5vmin;
@@ -168,6 +170,85 @@ a {
 form {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 98%;
   justify-content: space-between;
+}
+
+.popup {
+  background: #2328301e;
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100vh;
+  width: 100vw;
+  .windowPopup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: $fontColor;
+    height: 75%;
+    width: 75%;
+    border-radius: 10vmin;
+    background-color: $containerBackColor;
+  }
+}
+
+.popupTitle {
+  margin: 0px;
+  font-size: 15vmin;
+}
+
+.popupTitles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupSubTitle {
+  margin: 0px;
+  font-size: 5vmin;
+  color: $yellow;
+}
+
+.popupButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.yellow-button {
+  @include button(45vmin, 10vmin, $yellow, $fontColor);
+  text-decoration: none;
+}
+
+.yellow-button:hover {
+  @include button(45vmin, 10vmin, $containerBackColor, $yellow);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.white-button {
+  @include button(45vmin, 10vmin, $fontColor, $yellow);
+  text-decoration: none;
+}
+
+.white-button:hover {
+  @include button(45vmin, 10vmin, $containerBackColor, $fontColor);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h3 {
+  margin: 0px;
+  align-items: center;
+  display: flex;
+  font-size: 4vmin;
 }

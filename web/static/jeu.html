@@ -9,6 +9,58 @@
     <title>In game</title>
   </head>
   <body>
+    {{if .Loose}}
+    <div class="popup">
+      <div class="windowPopup">
+        <div class="popupTitles">
+            <div class="popupTitle">
+              PERDU
+          </div>
+          <div class="popupSubTitle">
+            Le mot etait : {{.ToFind}}
+          </div>
+        </div>
+        <div class="popupButtons">
+          <a class="yellow-button" href="/levels">
+            <h3>
+              NOUVELLE PARTIE
+            </h3>
+          </a>
+          <a class="white-button" href="/">
+            <h3>
+              ACCUEIL
+            </h3>
+          </a>
+        </div>
+      </div>
+    </div>
+    {{end}}
+    {{if .Win}}
+    <div class="popup">
+      <div class="windowPopup">
+        <div class="popupTitles">
+            <div class="popupTitle">
+            GAGNE
+          </div>
+          <div class="popupSubTitle">
+            Le mot etait : {{.ToFind}}
+          </div>
+        </div>
+        <div class="popupButtons">
+          <a class="yellow-button" href="/levels">
+            <h3>
+              NOUVELLE PARTIE
+            </h3>
+          </a>
+          <a class="white-button" href="/">
+            <h3>
+              ACCUEIL
+            </h3>
+          </a>
+        </div>
+      </div>
+    </div>
+    {{end}}
     <div class="left-part">
       <div class="left-header">
         <a class="button" href="/">{{ template "Fleche" .}}</a>

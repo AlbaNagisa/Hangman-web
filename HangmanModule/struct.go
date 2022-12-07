@@ -8,6 +8,7 @@ type HangManData struct {
 	Name     string   // Nom de la backup
 	Alphabet []string //un alphabet wesh
 	Win      bool
+	Loose    bool
 }
 
 type MenuLoc []struct {

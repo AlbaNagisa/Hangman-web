@@ -45,11 +45,10 @@ func main() {
 				}
 			}
 			if d.Attempts <= 0 {
-				http.Redirect(w, r, "/fin", http.StatusFound)
+				d.Loose = true
 			}
 			if d.ToFind == d.Word {
 				d.Win = true
-				http.Redirect(w, r, "/fin", http.StatusFound)
 			}
 			http.Redirect(w, r, "/jeu", http.StatusFound)
 		default:
@@ -72,7 +71,6 @@ func main() {
 				templateshtml.ExecuteTemplate(w, r.URL.Path[1:], d)
 			} else {
 				templateshtml.ExecuteTemplate(w, r.URL.Path[1:]+".html", d)
-
 			}
 
 		}

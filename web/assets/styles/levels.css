@@ -29,7 +29,7 @@ body {
   margin: 2vmin;
   -webkit-text-decoration-color: #393e46;
           text-decoration-color: #393e46;
-  box-shadow: 8vmin 8vmin black;
+  box-shadow: 0.5333333333vmin 0.5333333333vmin rgba(0, 0, 0, 0.27);
   align-items: center;
   justify-content: center;
 }
@@ -45,7 +45,7 @@ body {
   margin: 2vmin;
   -webkit-text-decoration-color: #ffd369;
           text-decoration-color: #ffd369;
-  box-shadow: 8vmin 8vmin black;
+  box-shadow: 0.5333333333vmin 0.5333333333vmin rgba(0, 0, 0, 0.27);
 }
 
 .button:hover .topLine {
@@ -130,7 +130,7 @@ a {
   margin: 2vmin;
   -webkit-text-decoration-color: #ffd369;
           text-decoration-color: #ffd369;
-  box-shadow: 10vmin 10vmin black;
+  box-shadow: 0.6666666667vmin 0.6666666667vmin rgba(0, 0, 0, 0.27);
   text-decoration: none;
 }
 
@@ -145,7 +145,7 @@ a {
   margin: 2vmin;
   -webkit-text-decoration-color: #eeeeee;
           text-decoration-color: #eeeeee;
-  box-shadow: 10vmin 10vmin black;
+  box-shadow: 0.6666666667vmin 0.6666666667vmin rgba(0, 0, 0, 0.27);
   text-decoration: none;
   cursor: pointer;
 }/*# sourceMappingURL=levels.css.map */
