@@ -14,9 +14,15 @@
       <a class="yellow-button" href="/levels">
         <h3>PLAY</h3>
       </a>
+      {{if .Logged}}
+      <a class="dark-button" href="/stats">
+        <h3>{{.Pseudo}}</h3>
+      </a>
+      {{else}}
       <a class="dark-button" href="/login">
         <h3>LOGIN</h3>
       </a>
+      {{end}}
     </div>
   </body>
 </html>

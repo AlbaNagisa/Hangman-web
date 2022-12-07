@@ -10,6 +10,17 @@ type HangManData struct {
 	Win      bool
 }
 
+type Session struct {
+	Logged bool
+	Game   HangManData
+	Email  string
+	Pseudo string
+	Mdp    string
+	NWin   int
+	NLoose int
+	Ratio  int
+}
+
 type MenuLoc []struct {
 	name string
 	x, y int

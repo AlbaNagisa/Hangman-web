@@ -3,9 +3,14 @@ package HangmanModule
 /*
 Cree le jeu
 */
-func SetHangman() HangManData {
+func SetHangman(difficulties string) HangManData {
 	var d HangManData
-	d.ToFind = RandomWord()
+	if difficulties == "" {
+		var indexDif []int
+		Random(2, 1, &indexDif, true)
+		difficulties = []string{"easy", "medium", "hard"}[indexDif[0]]
+	}
+	d.ToFind = RandomWord(difficulties)
 	d.Attempts = 10
 	d.Word = CreateWordWith_(d.ToFind)
 	d.Alphabet = []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}

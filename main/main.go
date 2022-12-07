@@ -1,10 +1,13 @@
 package main
 
 import (
+	"Hangman-web/Functions"
 	"Hangman-web/HangmanModule"
+	"encoding/base64"
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 	"text/template"
 )
@@ -14,7 +17,7 @@ func main() {
 	fileServer := http.FileServer(http.Dir("./web/assets"))
 	http.Handle("/assets/", http.StripPrefix("/assets/", fileServer))
 
-	var d HangmanModule.HangManData
+	var d HangmanModule.Session
 
 	dir, _ := os.Getwd()
 	files, _ := os.ReadDir(dir + "/web/static")
@@ -25,31 +28,65 @@ func main() {
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		var templateshtml = template.Must(template.ParseGlob("./web/static/*.html"))
+		if (r.Method == "POST") && (r.URL.Path == "/") {
+			d.Logged = true
+			d.Email = r.FormValue("email")
+			d.Mdp = base64.StdEncoding.EncodeToString([]byte(r.FormValue("password")))
+			d.Pseudo = r.FormValue("pseudo")
+			Functions.CsvWritter(d)
+		}
+		if (r.Method == "POST") && (r.URL.Path == "/login") {
+			d.Mdp = base64.StdEncoding.EncodeToString([]byte(r.FormValue("password")))
+			d.Email = r.FormValue("email")
+			csvFile := Functions.CsvReader()
+			for _, line := range csvFile {
+				if strings.ToLower(line[0]) == strings.ToLower(d.Email) {
+					if d.Mdp == line[1] {
+						d.Logged = true
+						d.Email = line[0]
+						d.Mdp = line[1]
+						d.NLoose, _ = strconv.Atoi(line[4])
+						d.Pseudo = line[2]
+						d.NWin, _ = strconv.Atoi(line[3])
+						d.Ratio, _ = strconv.Atoi(line[5])
+						http.Redirect(w, r, "/", http.StatusFound)
+					}
+				}
+			}
+
+		}
 		switch r.URL.Path {
 		case "/":
 			templateshtml.ExecuteTemplate(w, "index.html", d)
 		case "/setup":
-			d = HangmanModule.SetHangman()
+			d.Game = HangmanModule.SetHangman(r.URL.Query().Get("level"))
 			http.Redirect(w, r, "/jeu", http.StatusFound)
 		case "/hangman":
 			if r.Method == "POST" {
 				word := r.FormValue("word")
 				if word != "" {
-					check(d.ToFind, word, &d)
+					check(d.Game.ToFind, word, &d.Game)
 				}
 			} else {
 				letter := r.URL.Query().Get("letter")
 				if letter != "" {
-					check(d.ToFind, letter, &d)
-
+					check(d.Game.ToFind, letter, &d.Game)
 				}
 			}
-			if d.Attempts <= 0 {
-				http.Redirect(w, r, "/fin", http.StatusFound)
+			if d.Game.Attempts <= 0 {
+				if d.Logged {
+					d.NLoose += 1
+					//Functions.CsvWritter(d)
+					Functions.CsvReader()
+				}
 			}
-			if d.ToFind == d.Word {
-				d.Win = true
-				http.Redirect(w, r, "/fin", http.StatusFound)
+			if d.Game.ToFind == d.Game.Word {
+				d.Game.Win = true
+				if d.Logged {
+					d.NWin += 1
+					//Functions.CsvWritter(d)
+				}
+
 			}
 			http.Redirect(w, r, "/jeu", http.StatusFound)
 		default:
@@ -64,7 +101,7 @@ func main() {
 				http.Redirect(w, r, "/404", http.StatusFound)
 			}
 
-			if len(d.Alphabet) == 0 && (r.URL.Path == "/jeu" || r.URL.Path == "/fin") {
+			if len(d.Game.Alphabet) == 0 && (r.URL.Path == "/jeu" || r.URL.Path == "/fin") {
 				http.Redirect(w, r, "/setup", http.StatusFound)
 			}
 
@@ -87,6 +124,7 @@ func main() {
 
 func check(word, input string, d *HangmanModule.HangManData) {
 	ts := []rune(d.Word)
+	word = strings.ToLower(word)
 	found := false
 	foundUsed := false
 	input = strings.ToLower(input)
