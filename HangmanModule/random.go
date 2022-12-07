@@ -42,11 +42,11 @@ func Random(max, n int, r *[]int, unique bool) {
 /*
 Cette fonction choisi un mot random dans le fichier mis en argument
 */
-func RandomWord() string {
+func RandomWord(difficulties string) string {
 	var words []string
 	var randomNumber []int
 
-	FileReader(&words, "HangmanModule/Dicos/"+difficulty()+".txt") // Mise du fichier en argument de la commande dans words
+	FileReader(&words, "HangmanModule/Dicos/"+difficulties+".txt") // Mise du fichier en argument de la commande dans words
 	Random(len(words), 1, &randomNumber, true)                     // Choix d'un chiffre entre 0 et len(word) et mise dans randomNumber
 	return words[randomNumber[0]]                                  // Renvoi du mot selectionne par Random()
 }
