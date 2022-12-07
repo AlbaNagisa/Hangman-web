@@ -118,6 +118,5 @@ func check(word, input string, d *HangmanModule.HangManData) {
 			}
 		}
 	}
-	log.Println(string(ts))
 	d.Word = string(ts)
 }
