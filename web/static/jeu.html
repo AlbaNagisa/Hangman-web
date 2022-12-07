@@ -70,7 +70,20 @@
         <div class="wordContainer">
           <h2>{{.Game.Word}}</h2>
         </div>
-        <!-- fleche + container -->
+        <!-- 
+          Faire le code pour mettre la class .keyButtonAlreadyUsed sur les lettres deja utilisees
+          Code logique :
+
+          Pour toutes les lettres de .Game.Alphabet
+            Si {{.}} est dans .Game.Tries 
+              <p class="keyButtonAlreadyUsed">
+                <h2>{{.}}</h2>
+              </p>
+            Sinon
+              <a class="keyButton" href="/hangman?letter={{.}}">
+                <h2>{{.}}</h2>
+              </a>
+        -->
         <div  class="clavier">
           {{range .Game.Alphabet}}
           <a class="keyButton" href="/hangman?letter={{.}}">

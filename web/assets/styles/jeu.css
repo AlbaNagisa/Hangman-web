@@ -178,6 +178,24 @@ a {
   margin-bottom: 2vmin;
 }
 
+.keyButtonAlreadyUsed {
+  background-color: #393e46;
+  color: #eeeeee;
+  height: 7vmin;
+  width: 7vmin;
+  border-radius: 3.5vmin;
+  display: flex;
+  justify-content: center;
+  margin: 2vmin;
+  -webkit-text-decoration-color: #393e46;
+          text-decoration-color: #393e46;
+  box-shadow: 0.4666666667vmin 0.4666666667vmin rgba(0, 0, 0, 0.27);
+  align-items: center;
+  margin: 1vmin;
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
+}
+
 .keyButton:hover {
   color: #ffd369;
   background-color: #eeeeee;

@@ -10,12 +10,22 @@ func SetHangman(difficulties string) HangManData {
 		Random(2, 1, &indexDif, true)
 		difficulties = []string{"easy", "medium", "hard"}[indexDif[0]]
 	}
-	d.ToFind = RandomWord(difficulties)
-	d.Attempts = 10
-	d.Word = CreateWordWith_(d.ToFind)
-	d.Alphabet = []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
-	d.Win = false
-	d.Difficulty = difficulties
+	d = HangManData{
+		ToFind:     RandomWord(difficulties),
+		Attempts:   10,
+		Word:       CreateWordWith_(d.ToFind),
+		Alphabet:   []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"},
+		Win:        false,
+		Difficulty: difficulties,
+		TriesContain: func(letter string) bool {
+			for _, elt := range d.Tries {
+				if elt == letter {
+					return true
+				}
+			}
+			return false
+		},
+	}
 
 	return d
 }
