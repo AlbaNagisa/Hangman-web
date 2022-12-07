@@ -9,6 +9,9 @@
     <title>In game</title>
   </head>
   <body>
+    {{if .Game.Win}}
+    <!-- mettre la popup de victoire -->
+    {{end}}
     <div class="container">
       <div
         style="
@@ -63,14 +66,31 @@
       </form>
     </div>
     <div style="height: 100%">
-      {{if lt .Game.Attempts 10 }}
+      {{if lt .Game.Attempts 10}}
       <!-- premiere barre -->
       {{if lt .Game.Attempts 9}}
       <!-- deuxieme barre -->
       {{if lt .Game.Attempts 8}}
       <!-- deuxieme barre -->
       {{if lt .Game.Attempts 7}}
-      <!-- ect -->{{end}} {{end}} {{end}} {{end}}
+      <!-- troisième barre -->
+      {{if lt .Game.Attempts 6}}
+      <!-- quatrieme barre -->
+      {{if lt .Game.Attempts 5}}
+      <!-- cinquieme barre -->
+      {{if lt .Game.Attempts 4}}
+      <!-- sixieme barre -->
+      {{if lt .Game.Attempts 3}}
+      <!-- septieme barre -->
+      {{if lt .Game.Attempts 2}}
+      <!-- huitieme barre -->
+      {{if lt .Game.Attempts 1}}
+      <!-- neuvieme barre -->
+      {{if lt .Game.Attempts 0}}
+      <!-- dixieme barre -->
+      {{end}} {{end}} {{end}} {{end}} {{end}} {{end}} {{end}}{{end}} {{end}}
+      {{end}} {{end}}
     </div>
+    <!-- scoreboard -->
   </body>
 </html>

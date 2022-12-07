@@ -49,6 +49,7 @@ func main() {
 						d.Pseudo = line[2]
 						d.NWin, _ = strconv.Atoi(line[3])
 						d.Ratio, _ = strconv.Atoi(line[5])
+						d.Points, _ = strconv.Atoi(line[7])
 						http.Redirect(w, r, "/", http.StatusFound)
 					}
 				}
@@ -76,17 +77,32 @@ func main() {
 			if d.Game.Attempts <= 0 {
 				if d.Logged {
 					d.NLoose += 1
-					//Functions.CsvWritter(d)
-					Functions.CsvReader()
+					if d.NLoose != 0 {
+						d.Ratio = d.NWin / d.NLoose
+					}
+					Functions.CsvEditor(d)
 				}
 			}
 			if d.Game.ToFind == d.Game.Word {
 				d.Game.Win = true
 				if d.Logged {
+					if d.NLoose != 0 {
+						d.Ratio = d.NWin / d.NLoose
+					}
+					switch d.Game.Difficulty {
+					case "easy":
+						d.Points += 2
+					case "medium":
+						d.Points += 5
+					case "hard":
+						d.Points += 10
+					}
 					d.NWin += 1
-					//Functions.CsvWritter(d)
-				}
+					Functions.CsvEditor(d)
+					Functions.Podium(d)
+					log.Println(d.Scoreboard)
 
+				}
 			}
 			http.Redirect(w, r, "/jeu", http.StatusFound)
 		default:
@@ -158,6 +174,5 @@ func check(word, input string, d *HangmanModule.HangManData) {
 			}
 		}
 	}
-	log.Println(string(ts))
 	d.Word = string(ts)
 }

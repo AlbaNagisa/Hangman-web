@@ -53,12 +53,12 @@ func CsvWritter(data HangmanModule.Session) {
 	defer w.Flush()
 	// Using Write
 	if data.NLoose == 0 {
-		row := []string{data.Email, data.Mdp, data.Pseudo, strconv.Itoa(data.NWin), strconv.Itoa(data.NLoose), strconv.Itoa(1)}
+		row := []string{data.Email, data.Mdp, data.Pseudo, strconv.Itoa(data.NWin), strconv.Itoa(data.NLoose), strconv.Itoa(1), strconv.Itoa(data.NWin + data.NLoose), strconv.Itoa(data.Points)}
 		if err := w.Write(row); err != nil {
 			log.Fatalln("error writing record to file", err)
 		}
 	} else {
-		row := []string{data.Email, data.Mdp, data.Pseudo, strconv.Itoa(data.NWin), strconv.Itoa(data.NLoose), strconv.Itoa(data.NWin / data.NLoose)}
+		row := []string{data.Email, data.Mdp, data.Pseudo, strconv.Itoa(data.NWin), strconv.Itoa(data.NLoose), strconv.Itoa(data.NWin / data.NLoose), strconv.Itoa(data.NWin + data.NLoose), strconv.Itoa(data.Points)}
 		if err := w.Write(row); err != nil {
 			log.Fatalln("error writing record to file", err)
 		}
@@ -67,5 +67,25 @@ func CsvWritter(data HangmanModule.Session) {
 }
 
 func CsvEditor(data HangmanModule.Session) {
-
+	oldCsv := CsvReader()
+	file, err := os.Create("web/assets/data/data.csv")
+	defer file.Close()
+	if err != nil {
+		log.Fatalln("failed to open file", err)
+	}
+	w := csv.NewWriter(file)
+	for _, line := range oldCsv {
+		if line[0] == data.Email {
+			log.Println(data.Points)
+			line[4] = strconv.Itoa(data.NLoose)
+			line[3] = strconv.Itoa(data.NWin)
+			line[5] = strconv.Itoa(data.Ratio)
+			line[6] = strconv.Itoa(data.NLoose + data.NWin)
+			line[7] = strconv.Itoa(data.Points)
+		}
+		if err := w.Write(line); err != nil {
+			log.Fatalln("error writing record to file", err)
+		}
+		w.Flush()
+	}
 }
