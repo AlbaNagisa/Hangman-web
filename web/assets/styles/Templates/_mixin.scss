@@ -9,7 +9,6 @@
   overflow: hidden;
   font-family: new-order, sans-serif;
   font-style: medium;
-  font-weight: 400;
 }
 
 @mixin container(
@@ -46,4 +45,5 @@
   justify-content: center;
   margin: 2vmin;
   text-decoration-color: $backColor;
+  box-shadow: $height $height black;
 }

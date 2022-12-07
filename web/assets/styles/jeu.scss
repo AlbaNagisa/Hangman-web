@@ -1,18 +1,22 @@
 @import "./Templates/mixin";
 @import "./Templates/variable";
 
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
 body {
-  @include body-el(0, 4%, row, $backColor);
+  @include body-el(4%, 0, row, $backColor);
 }
 
 .left-part {
   width: 60%;
-  height: 85%;
+  height: 100%;
   color: $fontColor;
   display: flex;
   background-color: $backColor;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .right-part {
@@ -40,6 +44,27 @@ body {
   @include button(8vmin, 8vmin, $containerBackColor, $yellow);
   align-items: center;
   justify-content: center;
+  .topLine {
+    @include line(2.4vmin, 0.5vmin, -40deg);
+    background-color: $yellow;
+    margin-top: -1.3vmin;
+    margin-left: -2vmin;
+    position: absolute;
+  }
+  
+  .middleLine {
+    @include line(3vmin, 0.5vmin, 0deg);
+    background-color: $yellow;
+    position: absolute;
+  }
+  
+  .bottomLine {
+    @include line(2.4vmin, 0.5vmin, 40deg);
+    background-color: $yellow;
+    margin-top: 1.3vmin;
+    margin-left: -2vmin;
+    position: absolute;
+  }
 }
 
 .button:hover {
@@ -56,28 +81,6 @@ body {
 
 .button:hover .bottomLine {
   background-color: $containerBackColor;
-}
-
-.topLine {
-  @include line(2.4vmin, 0.5vmin, -40deg);
-  background-color: $yellow;
-  margin-top: -1.3vmin;
-  margin-left: -2vmin;
-  position: absolute;
-}
-
-.middleLine {
-  @include line(3vmin, 0.5vmin, 0deg);
-  background-color: $yellow;
-  position: absolute;
-}
-
-.bottomLine {
-  @include line(2.4vmin, 0.5vmin, 40deg);
-  background-color: $yellow;
-  margin-top: 1.3vmin;
-  margin-left: -2vmin;
-  position: absolute;
 }
 
 .clavier {
@@ -120,7 +123,9 @@ a {
 .keyButton {
   @include button(7vmin, 7vmin, $yellow, $fontColor);
   align-items: center;
-  margin: 2vmin;
+  margin: 1vmin;
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
 }
 
 .keyButton:hover {

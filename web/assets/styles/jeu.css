@@ -1,6 +1,11 @@
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
 body {
-  margin: 0;
-  padding: 4%;
+  margin: 4%;
+  padding: 0;
   width: 92%;
   height: 92%;
   display: flex;
@@ -9,17 +14,15 @@ body {
   overflow: hidden;
   font-family: new-order, sans-serif;
   font-style: medium;
-  font-weight: 400;
 }
 
 .left-part {
   width: 60%;
-  height: 85%;
+  height: 100%;
   color: #eeeeee;
   display: flex;
   background-color: #232830;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .right-part {
@@ -54,8 +57,37 @@ body {
   margin: 2vmin;
   -webkit-text-decoration-color: #393e46;
           text-decoration-color: #393e46;
+  box-shadow: 8vmin 8vmin black;
   align-items: center;
   justify-content: center;
+}
+.button .topLine {
+  width: 2.4vmin;
+  height: 0.5vmin;
+  transform: rotate(-40deg);
+  border-radius: 5vmin;
+  background-color: #ffd369;
+  margin-top: -1.3vmin;
+  margin-left: -2vmin;
+  position: absolute;
+}
+.button .middleLine {
+  width: 3vmin;
+  height: 0.5vmin;
+  transform: rotate(0deg);
+  border-radius: 5vmin;
+  background-color: #ffd369;
+  position: absolute;
+}
+.button .bottomLine {
+  width: 2.4vmin;
+  height: 0.5vmin;
+  transform: rotate(40deg);
+  border-radius: 5vmin;
+  background-color: #ffd369;
+  margin-top: 1.3vmin;
+  margin-left: -2vmin;
+  position: absolute;
 }
 
 .button:hover {
@@ -69,6 +101,7 @@ body {
   margin: 2vmin;
   -webkit-text-decoration-color: #ffd369;
           text-decoration-color: #ffd369;
+  box-shadow: 8vmin 8vmin black;
 }
 
 .button:hover .topLine {
@@ -81,37 +114,6 @@ body {
 
 .button:hover .bottomLine {
   background-color: #393e46;
-}
-
-.topLine {
-  width: 2.4vmin;
-  height: 0.5vmin;
-  transform: rotate(-40deg);
-  border-radius: 5vmin;
-  background-color: #ffd369;
-  margin-top: -1.3vmin;
-  margin-left: -2vmin;
-  position: absolute;
-}
-
-.middleLine {
-  width: 3vmin;
-  height: 0.5vmin;
-  transform: rotate(0deg);
-  border-radius: 5vmin;
-  background-color: #ffd369;
-  position: absolute;
-}
-
-.bottomLine {
-  width: 2.4vmin;
-  height: 0.5vmin;
-  transform: rotate(40deg);
-  border-radius: 5vmin;
-  background-color: #ffd369;
-  margin-top: 1.3vmin;
-  margin-left: -2vmin;
-  position: absolute;
 }
 
 .clavier {
@@ -168,8 +170,11 @@ a {
   margin: 2vmin;
   -webkit-text-decoration-color: #ffd369;
           text-decoration-color: #ffd369;
+  box-shadow: 7vmin 7vmin black;
   align-items: center;
-  margin: 2vmin;
+  margin: 1vmin;
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
 }
 
 .keyButton:hover {
@@ -206,6 +211,7 @@ a {
   margin: 2vmin;
   -webkit-text-decoration-color: #eeeeee;
           text-decoration-color: #eeeeee;
+  box-shadow: 8vmin 8vmin black;
   font-size: 3.5vmin;
   margin: 0px;
   margin-left: 2vmin;

@@ -1,3 +1,8 @@
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -9,7 +14,6 @@ body {
   overflow: hidden;
   font-family: new-order, sans-serif;
   font-style: medium;
-  font-weight: 400;
   color: #eeeeee;
   cursor: default;
 }
@@ -46,6 +50,7 @@ h1 {
   margin: 2vmin;
   -webkit-text-decoration-color: #ffd369;
           text-decoration-color: #ffd369;
+  box-shadow: 10vmin 10vmin black;
   text-decoration: none;
 }
 
@@ -60,6 +65,7 @@ h1 {
   margin: 2vmin;
   -webkit-text-decoration-color: #eeeeee;
           text-decoration-color: #eeeeee;
+  box-shadow: 10vmin 10vmin black;
   text-decoration: none;
   cursor: pointer;
 }
@@ -75,6 +81,7 @@ h1 {
   margin: 2vmin;
   -webkit-text-decoration-color: #393e46;
           text-decoration-color: #393e46;
+  box-shadow: 10vmin 10vmin black;
   text-decoration: none;
 }
 
@@ -89,6 +96,7 @@ h1 {
   margin: 2vmin;
   -webkit-text-decoration-color: #393e46;
           text-decoration-color: #393e46;
+  box-shadow: 10vmin 10vmin black;
   text-decoration: none;
   cursor: pointer;
 }
