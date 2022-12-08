@@ -459,7 +459,5 @@ h3 {
 }
 
 div[name=currentPlayer] {
-  outline-color: #ffd369;
-  outline-offset: 1vmin;
-  outline-width: 1vmin;
+  border: 5px solid #ffd369;
 }/*# sourceMappingURL=jeu.css.map */

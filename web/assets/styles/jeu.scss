@@ -322,7 +322,5 @@ h3 {
 }
 
 div[name="currentPlayer"] {
-  outline-color: $yellow;
-  outline-offset: 1vmin;
-  outline-width: 1vmin;
+  border: 5px solid $yellow;
 }
