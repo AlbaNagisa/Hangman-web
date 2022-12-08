@@ -50,6 +50,9 @@ func main() {
 						d.NWin, _ = strconv.Atoi(line[3])
 						d.Ratio, _ = strconv.Atoi(line[5])
 						d.Points, _ = strconv.Atoi(line[7])
+						if d.NLoose != 0 {
+							d.Ratio = d.NWin / d.NLoose
+						}
 						http.Redirect(w, r, "/", http.StatusFound)
 					}
 				}
@@ -62,6 +65,11 @@ func main() {
 			d.Scoreboard = Functions.Podium(d)
 			d.Game = HangmanModule.SetHangman(r.URL.Query().Get("level"))
 			http.Redirect(w, r, "/jeu", http.StatusFound)
+		case "/disconnect":
+			if d.Logged {
+				d = HangmanModule.Session{}
+			}
+			http.Redirect(w, r, "/", http.StatusFound)
 		case "/hangman":
 			if r.Method == "POST" {
 				word := r.FormValue("word")
