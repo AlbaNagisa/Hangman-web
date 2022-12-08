@@ -2,6 +2,7 @@ package Functions
 
 import (
 	"Hangman-web/HangmanModule"
+	"log"
 	"strconv"
 )
 
@@ -14,27 +15,37 @@ func Scoreboard() [][]string {
 func Podium(data HangmanModule.Session) []HangmanModule.Player {
 	var podiumPlayers [][]string
 	players := Scoreboard()
+	data.Scoreboard = []HangmanModule.Player{}
 	podiumPlayers = players[:3]
+	indexPodiumPlayers := []int{1, 2, 3}
 
 	for x, i := range players {
 		if x <= 4 {
 			if data.Email == i[0] {
 				podiumPlayers = players[:5]
+				indexPodiumPlayers = []int{1, 2, 3, 4, 5}
+				break
 			}
-
 		} else {
 			if data.Email == i[0] {
-				data.Scoreboard = AddToScorboard(players[x-1], data)
-
-				data.Scoreboard = AddToScorboard(i, data)
+				podiumPlayers = append(podiumPlayers, players[x-1])
+				indexPodiumPlayers = append(indexPodiumPlayers, x-1)
+				podiumPlayers = append(podiumPlayers, i)
+				indexPodiumPlayers = append(indexPodiumPlayers, x)
+				break
 			}
 		}
 	}
-	for _, i := range podiumPlayers {
-		data.Scoreboard = AddToScorboard(i, data)
+	if !data.Logged {
+		podiumPlayers = players[:5]
+		indexPodiumPlayers = []int{1, 2, 3, 4, 5}
 	}
-	SortStruct(&data.Scoreboard)
+	for x, i := range podiumPlayers {
+		data.Scoreboard = AddToScorboard(i, data, indexPodiumPlayers[x])
+	}
 
+	SortStruct(&data.Scoreboard)
+	log.Println(data.Scoreboard)
 	return data.Scoreboard
 }
 
@@ -55,6 +66,10 @@ func SortStruct(a *[]HangmanModule.Player) {
 		for j := 0; j < len((*a)); j++ {
 			b := (*a)[i]
 			c := (*a)[j]
+
+			if c.Points == b.Points {
+				continue
+			}
 			if c.Points < b.Points {
 				(*a)[i], (*a)[j] = (*a)[j], (*a)[i]
 			}
@@ -62,12 +77,13 @@ func SortStruct(a *[]HangmanModule.Player) {
 	}
 }
 
-func AddToScorboard(i []string, data HangmanModule.Session) []HangmanModule.Player {
+func AddToScorboard(i []string, data HangmanModule.Session, pos int) []HangmanModule.Player {
 	var p HangmanModule.Player
 	pts, _ := strconv.Atoi(i[7])
 	p = HangmanModule.Player{
-		Pseudo: i[2],
-		Points: pts,
+		Pseudo:   i[2],
+		Points:   pts,
+		Position: pos,
 	}
 	data.Scoreboard = append(data.Scoreboard, p)
 	return data.Scoreboard

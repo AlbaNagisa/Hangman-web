@@ -59,6 +59,7 @@ func main() {
 		case "/":
 			templateshtml.ExecuteTemplate(w, "index.html", d)
 		case "/setup":
+			d.Scoreboard = Functions.Podium(d)
 			d.Game = HangmanModule.SetHangman(r.URL.Query().Get("level"))
 			http.Redirect(w, r, "/jeu", http.StatusFound)
 		case "/hangman":
@@ -99,10 +100,9 @@ func main() {
 					}
 					d.NWin += 1
 					Functions.CsvEditor(d)
-					d.Scoreboard = Functions.Podium(d)
-					log.Println(d.Scoreboard)
 				}
 			}
+			d.Scoreboard = Functions.Podium(d)
 			http.Redirect(w, r, "/jeu", http.StatusFound)
 		default:
 			exist := false
