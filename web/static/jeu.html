@@ -38,11 +38,15 @@
           margin-top: 7vh;
         "
       >
-        {{range .Game.Alphabet}}
+        {{range .Game.Alphabet}} {{if .Used}}
         <a class="keyButton" href="/hangman?letter={{.}}">
-          <h2>{{.}}</h2>
+          <h2>{{.Letter}}</h2>
         </a>
-        {{end}}
+        {{else}}
+        <a class="keyButtonUsed">
+          <h2>{{.Letter}}</h2>
+        </a>
+        {{end}} {{end}}
       </div>
 
       <form

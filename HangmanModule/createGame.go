@@ -13,7 +13,14 @@ func SetHangman(difficulties string) HangManData {
 	d.ToFind = RandomWord(difficulties)
 	d.Attempts = 10
 	d.Word = CreateWordWith_(d.ToFind)
-	d.Alphabet = []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
+	for i := 'A'; i <= 'Z'; i++ {
+		var a Alphabet
+		a = Alphabet{
+			Letter: string(i),
+			Used:   false,
+		}
+		d.Alphabet = append(d.Alphabet, a)
+	}
 	d.Win = false
 	d.Difficulty = difficulties
 
