@@ -3,6 +3,7 @@ package HangmanModule
 import (
 	"log"
 	"math/rand"
+	"strings"
 	"time"
 )
 
@@ -48,5 +49,5 @@ func RandomWord(difficulties string) string {
 
 	FileReader(&words, "HangmanModule/Dicos/"+difficulties+".txt") // Mise du fichier en argument de la commande dans words
 	Random(len(words), 1, &randomNumber, true)                     // Choix d'un chiffre entre 0 et len(word) et mise dans randomNumber
-	return words[randomNumber[0]]                                  // Renvoi du mot selectionne par Random()
+	return strings.ToLower(words[randomNumber[0]])                 // Renvoi du mot selectionne par Random()
 }

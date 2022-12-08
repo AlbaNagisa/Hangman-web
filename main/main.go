@@ -98,6 +98,7 @@ func main() {
 			if d.Game.ToFind == d.Game.Word {
 				d.Game.Win = true
 				if d.Logged {
+					d.Ratio = 1
 					if d.NLoose != 0 {
 						d.Ratio = d.NWin / d.NLoose
 					}
