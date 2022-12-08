@@ -241,6 +241,10 @@ a {
   margin-bottom: 2vmin;
 }
 
+.keyButtonUsed:hover {
+  cursor: default;
+}
+
 .input {
   border-radius: 5vmin;
   width: 80%;
