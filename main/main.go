@@ -113,7 +113,6 @@ func main() {
 					Functions.CsvEditor(d)
 				}
 			}
-			d.Scoreboard = Functions.Podium(d)
 			http.Redirect(w, r, "/jeu", http.StatusFound)
 		default:
 			exist := false
