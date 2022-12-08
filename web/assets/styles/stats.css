@@ -1,0 +1,135 @@
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  margin: 4%;
+  padding: 0;
+  width: 92%;
+  height: 92%;
+  display: flex;
+  flex-direction: column;
+  background-color: #232830;
+  overflow: hidden;
+  font-family: new-order, sans-serif;
+  font-style: medium;
+  color: #eeeeee;
+  cursor: default;
+}
+
+.button {
+  background-color: #393e46;
+  color: #ffd369;
+  height: 8vmin;
+  width: 8vmin;
+  border-radius: 4vmin;
+  display: flex;
+  justify-content: center;
+  margin: 2vmin;
+  -webkit-text-decoration-color: #393e46;
+          text-decoration-color: #393e46;
+  box-shadow: 0.5333333333vmin 0.5333333333vmin rgba(0, 0, 0, 0.27);
+  align-items: center;
+  justify-content: center;
+}
+.button .topLine {
+  width: 2.4vmin;
+  height: 0.5vmin;
+  transform: rotate(-40deg);
+  border-radius: 5vmin;
+  background-color: #ffd369;
+  margin-top: -1.3vmin;
+  margin-left: -2vmin;
+  position: absolute;
+}
+.button .middleLine {
+  width: 3vmin;
+  height: 0.5vmin;
+  transform: rotate(0deg);
+  border-radius: 5vmin;
+  background-color: #ffd369;
+  position: absolute;
+}
+.button .bottomLine {
+  width: 2.4vmin;
+  height: 0.5vmin;
+  transform: rotate(40deg);
+  border-radius: 5vmin;
+  background-color: #ffd369;
+  margin-top: 1.3vmin;
+  margin-left: -2vmin;
+  position: absolute;
+}
+
+.button:hover {
+  background-color: #ffd369;
+  color: #393e46;
+  height: 8vmin;
+  width: 8vmin;
+  border-radius: 4vmin;
+  display: flex;
+  justify-content: center;
+  margin: 2vmin;
+  -webkit-text-decoration-color: #ffd369;
+          text-decoration-color: #ffd369;
+  box-shadow: 0.5333333333vmin 0.5333333333vmin rgba(0, 0, 0, 0.27);
+}
+
+.button:hover .topLine {
+  background-color: #393e46;
+}
+
+.button:hover .middleLine {
+  background-color: #393e46;
+}
+
+.button:hover .bottomLine {
+  background-color: #393e46;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+h1 {
+  font-size: 7vmin;
+  overflow-wrap: break-word;
+  margin: 0;
+}
+
+.content {
+  padding-top: 5%;
+  display: flex;
+}
+
+.column {
+  width: 46%;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat {
+  background-color: #393e46;
+  color: #eeeeee;
+  height: 7vmin;
+  width: 85%;
+  border-radius: 3.5vmin;
+  display: flex;
+  justify-content: center;
+  margin: 2vmin;
+  -webkit-text-decoration-color: #393e46;
+          text-decoration-color: #393e46;
+  box-shadow: 0.4666666667vmin 0.4666666667vmin rgba(0, 0, 0, 0.27);
+  align-items: center;
+  font-size: 4vmin;
+  justify-content: space-between;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.staticPart {
+  color: #ffd369;
+}/*# sourceMappingURL=stats.css.map */

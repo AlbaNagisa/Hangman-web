@@ -128,7 +128,13 @@ a {
   margin-bottom: 2vmin;
 }
 
-.keyButtonAlreadyUsed {
+.keyButton:hover {
+  color: $yellow;
+  background-color: $fontColor;
+  cursor: pointer;
+}
+
+.keyButtonUsed {
   @include button(7vmin, 7vmin, $containerBackColor, $fontColor);
   align-items: center;
   margin: 1vmin;

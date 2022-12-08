@@ -1,0 +1,92 @@
+@import "./Templates/_mixin";
+@import "./Templates/variable";
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  @include body-el(4%, 0, column, $backColor);
+  color: $fontColor;
+  cursor: default;
+}
+
+.button {
+  @include button(8vmin, 8vmin, $containerBackColor, $yellow);
+  align-items: center;
+  justify-content: center;
+  .topLine {
+    @include line(2.4vmin, 0.5vmin, -40deg);
+    background-color: $yellow;
+    margin-top: -1.3vmin;
+    margin-left: -2vmin;
+    position: absolute;
+  }
+  
+  .middleLine {
+    @include line(3vmin, 0.5vmin, 0deg);
+    background-color: $yellow;
+    position: absolute;
+  }
+  
+  .bottomLine {
+    @include line(2.4vmin, 0.5vmin, 40deg);
+    background-color: $yellow;
+    margin-top: 1.3vmin;
+    margin-left: -2vmin;
+    position: absolute;
+  }
+}
+
+.button:hover {
+  @include button(8vmin, 8vmin, $yellow, $containerBackColor);
+}
+
+.button:hover .topLine {
+  background-color: $containerBackColor;
+}
+
+.button:hover .middleLine {
+  background-color: $containerBackColor;
+}
+
+.button:hover .bottomLine {
+  background-color: $containerBackColor;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+h1 {
+  font-size: 7vmin;
+  overflow-wrap: break-word;
+  margin: 0;
+}
+
+.content {
+    padding-top: 5%;
+    display: flex;
+}
+
+.column {
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat {
+    @include button(85%, 7vmin, $containerBackColor, $fontColor);
+    align-items: center;
+    font-size: 4vmin;
+    justify-content: space-between;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.staticPart {
+    color: $yellow;
+}

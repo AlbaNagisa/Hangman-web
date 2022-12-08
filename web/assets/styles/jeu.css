@@ -178,7 +178,13 @@ a {
   margin-bottom: 2vmin;
 }
 
-.keyButtonAlreadyUsed {
+.keyButton:hover {
+  color: #ffd369;
+  background-color: #eeeeee;
+  cursor: pointer;
+}
+
+.keyButtonUsed {
   background-color: #393e46;
   color: #eeeeee;
   height: 7vmin;
