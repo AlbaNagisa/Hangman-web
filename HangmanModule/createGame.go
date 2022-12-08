@@ -5,10 +5,6 @@ Cree le jeu
 */
 func SetHangman(difficulties string, session *Session) HangManData {
 	var d HangManData
-	if difficulties == "easteregg" && session.EasterEgg < 10 {
-		session.EasterEgg++
-		return d
-	}
 
 	d.ToFind = RandomWord(difficulties)
 	d.Attempts = 10

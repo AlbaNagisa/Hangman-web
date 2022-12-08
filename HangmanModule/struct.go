@@ -13,17 +13,18 @@ type HangManData struct {
 }
 
 type Session struct {
-	Logged     bool
-	Game       HangManData
-	Email      string
-	Pseudo     string
-	Mdp        string
-	NWin       int
-	NLoose     int
-	Ratio      int
-	Points     int
-	Scoreboard []Player
-	EasterEgg  int
+	Logged           bool
+	Game             HangManData
+	Email            string
+	Pseudo           string
+	Mdp              string
+	NWin             int
+	NLoose           int
+	Ratio            int
+	Points           int
+	Scoreboard       []Player
+	EasterEgg        int
+	FunnyModeEnabled bool
 }
 
 type Player struct {

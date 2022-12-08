@@ -145,4 +145,35 @@ a {
   box-shadow: 0.6666666667vmin 0.6666666667vmin rgba(0, 0, 0, 0.27);
   text-decoration: none;
   cursor: pointer;
+}
+
+.red-button {
+  background-color: #ff6969;
+  color: #eeeeee;
+  height: 10vmin;
+  width: 40vmin;
+  border-radius: 5vmin;
+  display: flex;
+  justify-content: center;
+  margin: 2vmin;
+  -webkit-text-decoration-color: #ff6969;
+          text-decoration-color: #ff6969;
+  box-shadow: 0.6666666667vmin 0.6666666667vmin rgba(0, 0, 0, 0.27);
+  text-decoration: none;
+}
+
+.red-button:hover {
+  background-color: #eeeeee;
+  color: #ff6969;
+  height: 10vmin;
+  width: 40vmin;
+  border-radius: 5vmin;
+  display: flex;
+  justify-content: center;
+  margin: 2vmin;
+  -webkit-text-decoration-color: #eeeeee;
+          text-decoration-color: #eeeeee;
+  box-shadow: 0.6666666667vmin 0.6666666667vmin rgba(0, 0, 0, 0.27);
+  text-decoration: none;
+  cursor: pointer;
 }/*# sourceMappingURL=levels.css.map */

@@ -93,3 +93,14 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+.red-button {
+  @include button(40vmin, 10vmin, $red, $fontColor);
+  text-decoration: none;
+}
+
+.red-button:hover {
+  @include button(40vmin, 10vmin, $fontColor, $red);
+  text-decoration: none;
+  cursor: pointer;
+}
