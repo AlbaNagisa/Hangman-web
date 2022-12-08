@@ -71,7 +71,6 @@ func main() {
 		case "/setup":
 			d.Scoreboard = Functions.Podium(d)
 			if r.URL.Query().Get("easteregg") == "true" {
-				log.Println(d.EasterEgg, d.FunnyModeEnabled)
 				if d.EasterEgg < 10 {
 					d.EasterEgg++
 				} else if d.EasterEgg == 10 {
