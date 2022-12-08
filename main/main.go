@@ -63,8 +63,13 @@ func main() {
 			templateshtml.ExecuteTemplate(w, "index.html", d)
 		case "/setup":
 			d.Scoreboard = Functions.Podium(d)
-			d.Game = HangmanModule.SetHangman(r.URL.Query().Get("level"))
-			http.Redirect(w, r, "/jeu", http.StatusFound)
+			d.Game = HangmanModule.SetHangman(r.URL.Query().Get("level"), &d)
+			if d.Game.Attempts == 10 {
+				d.EasterEgg = 0
+				http.Redirect(w, r, "/jeu", http.StatusFound)
+			} else {
+				http.Redirect(w, r, "/levels", http.StatusFound)
+			}
 		case "/stat":
 			d.Scoreboard = Functions.Podium(d)
 			http.Redirect(w, r, "/stats", http.StatusFound)

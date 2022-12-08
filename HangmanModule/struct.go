@@ -23,6 +23,7 @@ type Session struct {
 	Ratio      int
 	Points     int
 	Scoreboard []Player
+	EasterEgg  int
 }
 
 type Player struct {
