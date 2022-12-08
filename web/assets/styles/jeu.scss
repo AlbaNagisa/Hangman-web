@@ -8,32 +8,48 @@ html {
 
 body {
   @include body-el(4%, 0%, row, $backColor);
+  overflow: visible;
+  flex-wrap: wrap;
 }
 
 .left-part {
-  width: 60%;
-  height: 100%;
   color: $fontColor;
   display: flex;
   background-color: $backColor;
   flex-direction: column;
+  margin-bottom: 1.5rem;
 }
 
 .right-part {
-  width: 40%;
   color: $fontColor;
   display: flex;
   background-color: $backColor;
   flex-direction: column;
 }
 
+@media (min-width: 768px) {
+	body {
+		flex-wrap: nowrap;
+	}
+  .left-part {
+    width: 60vw;
+    height: 100%;
+  }
+  .right-part {
+    margin-right: 0;
+    margin-left: 0;
+    width: 40vw;
+  }
+  .left-body {
+    height: 80%;
+  }
+}
 .left-header {
   display: flex;
   align-items: center;
 }
 
 .left-body {
-  height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -272,6 +288,8 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto
 }
 
 .hangman {
@@ -283,6 +301,12 @@ h3 {
     $yellow,
     0.6vmin
   );
+}
+
+.hangman-part {
+  position: absolute;
+  height: 35vmin;
+  width: 35vmin;
 }
 
 .firstBar {

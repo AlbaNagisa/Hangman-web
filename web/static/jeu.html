@@ -82,29 +82,27 @@
     <div class="right-part">
       <div class="hangman">
         {{if lt .Game.Attempts 10}}
-        <div class="firstBar"></div>
+        <img src="../assets/images/hangmanPositions/1.svg" width="36px" class="hangman-part">
         {{if lt .Game.Attempts 9}}
-        <!-- deuxieme barre -->
+        <img src="../assets/images/hangmanPositions/2.svg" width="36px" class="hangman-part">
         {{if lt .Game.Attempts 8}}
-        <!-- deuxieme barre -->
+        <img src="../assets/images/hangmanPositions/3.svg" width="36px" class="hangman-part">
         {{if lt .Game.Attempts 7}}
-        <!-- troisième barre -->
+        <img src="../assets/images/hangmanPositions/4.svg" width="36px" class="hangman-part">
         {{if lt .Game.Attempts 6}}
-        <!-- quatrieme barre -->
+        <img src="../assets/images/hangmanPositions/5.svg" width="36px" class="hangman-part">
         {{if lt .Game.Attempts 5}}
-        <!-- cinquieme barre -->
+        <img src="../assets/images/hangmanPositions/6.svg" width="36px" class="hangman-part">
         {{if lt .Game.Attempts 4}}
-        <!-- sixieme barre -->
+        <img src="../assets/images/hangmanPositions/7.svg" width="36px" class="hangman-part">
         {{if lt .Game.Attempts 3}}
-        <!-- septieme barre -->
+        <img src="../assets/images/hangmanPositions/8.svg" width="36px" class="hangman-part">
         {{if lt .Game.Attempts 2}}
-        <!-- huitieme barre -->
+        <img src="../assets/images/hangmanPositions/9.svg" width="36px" class="hangman-part">
         {{if lt .Game.Attempts 1}}
-        <!-- neuvieme barre -->
-        {{if lt .Game.Attempts 0}}
-        <!-- dixieme barre -->
-        {{end}} {{end}} {{end}} {{end}} {{end}} {{end}} {{end}}{{end}} {{end}}
-        {{end}} {{end}}
+        <img src="../assets/images/hangmanPositions/10.svg" width="36px" class="hangman-part">
+        {{end}} {{end}} {{end}} {{end}} {{end}} {{end}} {{end}} {{end}} {{end}}
+        {{end}}
       </div>
       {{ $pseudo := .Pseudo}}
       <div class="scoreboard">
