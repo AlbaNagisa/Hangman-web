@@ -5,7 +5,7 @@ html {
 
 body {
   margin: 4%;
-  padding: 0;
+  padding: 0%;
   width: 92%;
   height: 92%;
   display: flex;
@@ -128,15 +128,14 @@ body {
 }
 
 .wordContainer {
-  margin: 0;
+  margin: 0px;
   width: 96%;
   color: #eeeeee;
   height: 10vh;
   display: flex;
   background-color: #393e46;
   border-radius: 5vh;
-  box-shadow: 0.6666666667vh 0.6666666667vh rgba(0, 0, 0, 0.27);
-  border-radius: 5vmin;
+  box-shadow: 0.6vh 0.6vh rgba(0, 0, 0, 0.27);
   align-items: center;
   justify-content: center;
   font-style: bold;
@@ -387,4 +386,32 @@ h3 {
   align-items: center;
   display: flex;
   font-size: 4vmin;
+}
+
+.right-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hangman {
+  margin: 0px;
+  width: 35vmin;
+  color: #ffd369;
+  height: 35vmin;
+  display: flex;
+  background-color: #393e46;
+  border-radius: 8vmin;
+  box-shadow: 0.6vmin 0.6vmin rgba(0, 0, 0, 0.27);
+}
+
+.firstBar {
+  position: absolute;
+  top: calc(20vmin + 4vh);
+  right: 22vw;
+  width: 0.4vmin;
+  height: 20vmin;
+  transform: rotate(90deg);
+  border-radius: 5vmin;
+  background-color: #ffd369;
 }/*# sourceMappingURL=jeu.css.map */

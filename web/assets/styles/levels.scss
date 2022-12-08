@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @include body-el(4%, 0, column, $backColor);
+  @include body-el(4%, 0%, column, $backColor);
   color: $fontColor;
   cursor: default;
 }

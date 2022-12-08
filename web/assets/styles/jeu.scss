@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @include body-el(4%, 0, row, $backColor);
+  @include body-el(4%, 0%, row, $backColor);
 }
 
 .left-part {
@@ -95,8 +95,7 @@ body {
 }
 
 .wordContainer {
-  @include container(0, 96%, 10vh, flex, $containerBackColor, $fontColor);
-  border-radius: 5vmin;
+  @include container(96%, 10vh, 5vh, $containerBackColor, $fontColor, 0.6vh);
   align-items: center;
   justify-content: center;
   font-style: bold;
@@ -165,7 +164,7 @@ a {
   font-size: 3vmin;
   text-align: center;
   border: none;
-  box-shadow: (8vmin/15) (8vmin/15) rgba(0, 0, 0, 0.27);
+  box-shadow: calc(8vmin/15) calc(8vmin/15) rgba(0, 0, 0, 0.27);
 }
 
 .inputButton {
@@ -267,4 +266,22 @@ h3 {
   align-items: center;
   display: flex;
   font-size: 4vmin;
+}
+
+.right-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hangman {
+  @include container(35vmin, 35vmin, 8vmin, $containerBackColor, $yellow, 0.6vmin);
+}
+
+.firstBar {
+  position: absolute;
+  top: calc(20vmin + 4vh);
+  right: calc(22vw);
+  @include line(0.4vmin, 20vmin, 90deg);
+  background-color: $yellow;
 }

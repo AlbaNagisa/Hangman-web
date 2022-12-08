@@ -1,8 +1,8 @@
 @mixin body-el($margin, $padding, $flexDirection, $backColor) {
   margin: $margin;
   padding: $padding;
-  width: 100% - ($margin + $padding) * 2;
-  height: 100% - ($margin + $padding) * 2;
+  width: 100% - calc($margin + $padding) * 2;
+  height: 100% - calc($margin + $padding) * 2;
   display: flex;
   flex-direction: $flexDirection;
   background-color: $backColor;
@@ -12,21 +12,20 @@
 }
 
 @mixin container(
-  $margin,
   $width,
   $height,
-  $display,
+  $radius,
   $backColor,
-  $color
+  $color, $shadow
 ) {
-  margin: $margin;
+  margin: 0px;
   width: $width;
   color: $color;
   height: $height;
-  display: $display;
+  display: flex;
   background-color: $backColor;
-  border-radius: $height / 2;
-  box-shadow: ($height/15) ($height/15) rgba(0, 0, 0, 0.27);
+  border-radius: $radius;
+  box-shadow: $shadow $shadow rgba(0, 0, 0, 0.27);
 }
 
 @mixin line($width, $height, $degre) {
@@ -41,10 +40,10 @@
   color: $fontColor;
   height: $height;
   width: $width;
-  border-radius: $height/2;
+  border-radius: calc($height/2);
   display: flex;
   justify-content: center;
   margin: 2vmin;
   text-decoration-color: $backColor;
-  box-shadow: ($height/15) ($height/15) rgba(0, 0, 0, 0.27);
+  box-shadow: calc($height/15) calc($height/15) rgba(0, 0, 0, 0.27);
 }
