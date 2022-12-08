@@ -25,6 +25,7 @@ type Session struct {
 	Scoreboard       []Player
 	EasterEgg        int
 	FunnyModeEnabled bool
+	HomeEasterEgg    bool
 }
 
 type Player struct {

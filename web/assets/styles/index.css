@@ -23,7 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
 }
 
 h1 {
@@ -106,4 +106,13 @@ h3 {
   align-items: center;
   display: flex;
   font-size: 5vmin;
+}
+
+.easteregg {
+  width: 100%;
+  height: 5%;
+}
+
+.easteregg:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */

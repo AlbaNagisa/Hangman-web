@@ -60,19 +60,32 @@ func main() {
 		}
 		switch r.URL.Path {
 		case "/":
+			if r.URL.Query().Get("easteregg") == "true" {
+				d.EasterEgg++
+				if d.EasterEgg == 50 {
+					d.HomeEasterEgg = true
+				}
+				http.Redirect(w, r, "/", http.StatusFound)
+			}
 			templateshtml.ExecuteTemplate(w, "index.html", d)
 		case "/setup":
 			d.Scoreboard = Functions.Podium(d)
 			if r.URL.Query().Get("easteregg") == "true" {
+				log.Println(d.EasterEgg, d.FunnyModeEnabled)
 				if d.EasterEgg < 10 {
 					d.EasterEgg++
-				} else {
+				} else if d.EasterEgg == 10 {
+					d.EasterEgg++
 					d.FunnyModeEnabled = true
+				} else {
+					d.EasterEgg = 0
+					d.FunnyModeEnabled = false
 				}
 				http.Redirect(w, r, "/levels", http.StatusFound)
 			} else {
 				d.Game = HangmanModule.SetHangman(r.URL.Query().Get("level"), &d)
 				d.EasterEgg = 0
+				d.FunnyModeEnabled = false
 				http.Redirect(w, r, "/jeu", http.StatusFound)
 			}
 
