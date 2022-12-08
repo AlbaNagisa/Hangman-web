@@ -26,8 +26,9 @@ type Session struct {
 }
 
 type Player struct {
-	Pseudo string
-	Points int
+	Pseudo   string
+	Points   int
+	Position int
 }
 
 type Alphabet struct {

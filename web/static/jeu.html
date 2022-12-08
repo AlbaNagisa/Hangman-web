@@ -73,6 +73,7 @@
             name="word"
             placeholder="Ecrivez un mot"
             autocomplete="off"
+            autofocus
           />
           <input type="submit" class="inputButton" value="ENTRER" />
         </form>
@@ -106,7 +107,23 @@
         {{end}} {{end}}
       </div>
     </div>
-    <!-- scoreboard -->
-    <div></div>
+    <div style="display: flex; width: 40%; flex-direction: column; height: 20%">
+      {{range .Scoreboard}}
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        "
+      >
+        <div>
+          <h2 style="color: #eeeeee">{{.Position}} {{.Pseudo}}</h2>
+        </div>
+        <div>
+          <h2 style="color: #eeeeee">{{.Points}}pts</h2>
+        </div>
+      </div>
+      {{end}}
+    </div>
   </body>
 </html>
