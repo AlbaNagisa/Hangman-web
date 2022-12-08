@@ -99,8 +99,8 @@ func main() {
 					}
 					d.NWin += 1
 					Functions.CsvEditor(d)
-					Functions.Podium(d)
-
+					d.Scoreboard = Functions.Podium(d)
+					log.Println(d.Scoreboard)
 				}
 			}
 			http.Redirect(w, r, "/jeu", http.StatusFound)

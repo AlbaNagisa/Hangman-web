@@ -11,28 +11,31 @@ func Scoreboard() [][]string {
 	return players
 }
 
-func Podium(data HangmanModule.Session) {
+func Podium(data HangmanModule.Session) []HangmanModule.Player {
 	var podiumPlayers [][]string
 	players := Scoreboard()
 	podiumPlayers = players[:3]
-	alreadyAdded := false
-	for _, i := range podiumPlayers {
-		AddToScorboard(i, data)
-		if data.Email == i[0] {
-			alreadyAdded = true
-		}
-	}
+
 	for x, i := range players {
-		if data.Email == i[0] {
-			if !alreadyAdded {
-				AddToScorboard(i, data)
-				if x != 0 {
-					AddToScorboard(players[x-1], data)
-				}
+		if x <= 4 {
+			if data.Email == i[0] {
+				podiumPlayers = players[:5]
 			}
 
+		} else {
+			if data.Email == i[0] {
+				data.Scoreboard = AddToScorboard(players[x-1], data)
+
+				data.Scoreboard = AddToScorboard(i, data)
+			}
 		}
 	}
+	for _, i := range podiumPlayers {
+		data.Scoreboard = AddToScorboard(i, data)
+	}
+	SortStruct(&data.Scoreboard)
+
+	return data.Scoreboard
 }
 
 func Sort(a *[][]string) {
@@ -47,20 +50,19 @@ func Sort(a *[][]string) {
 	}
 }
 
-/*
-	 func SortStruct(a *[]HangmanModule.Player) {
-		for i := 0; i < len((*a)); i++ {
-			for j := 0; j < len((*a)); j++ {
-				b := (*a)[i]
-				c := (*a)[j]
-				if c.Points < b.Points {
-					(*a)[i], (*a)[j] = (*a)[j], (*a)[i]
-				}
+func SortStruct(a *[]HangmanModule.Player) {
+	for i := 0; i < len((*a)); i++ {
+		for j := 0; j < len((*a)); j++ {
+			b := (*a)[i]
+			c := (*a)[j]
+			if c.Points < b.Points {
+				(*a)[i], (*a)[j] = (*a)[j], (*a)[i]
 			}
 		}
 	}
-*/
-func AddToScorboard(i []string, data HangmanModule.Session) {
+}
+
+func AddToScorboard(i []string, data HangmanModule.Session) []HangmanModule.Player {
 	var p HangmanModule.Player
 	pts, _ := strconv.Atoi(i[7])
 	p = HangmanModule.Player{
@@ -68,4 +70,5 @@ func AddToScorboard(i []string, data HangmanModule.Session) {
 		Points: pts,
 	}
 	data.Scoreboard = append(data.Scoreboard, p)
+	return data.Scoreboard
 }
