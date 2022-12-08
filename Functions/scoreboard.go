@@ -2,7 +2,6 @@ package Functions
 
 import (
 	"Hangman-web/HangmanModule"
-	"log"
 	"strconv"
 )
 
@@ -45,7 +44,6 @@ func Podium(data HangmanModule.Session) []HangmanModule.Player {
 	}
 
 	SortStruct(&data.Scoreboard)
-	log.Println(data.Scoreboard)
 	return data.Scoreboard
 }
 
