@@ -335,7 +335,8 @@ h3 {
   color: #a36e08;
 }
 
-#current-player {
-  background-color: $yellow;
-  color: $containerBackColor;
+div[name="currentPlayer"] {
+  outline-color: $yellow;
+  outline-offset: 1vmin;
+  outline-width: 1vmin;
 }

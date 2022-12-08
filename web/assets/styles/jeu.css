@@ -458,7 +458,8 @@ h3 {
   color: #a36e08;
 }
 
-#current-player {
-  background-color: #ffd369;
-  color: #393e46;
+div[name=currentPlayer] {
+  outline-color: #ffd369;
+  outline-offset: 1vmin;
+  outline-width: 1vmin;
 }/*# sourceMappingURL=jeu.css.map */
