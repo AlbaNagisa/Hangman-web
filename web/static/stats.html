@@ -43,8 +43,15 @@
         </div>
         <div class="column">
             <div class="stat">
-                <div class="staticPart">Et la le classement</div>
+                <div class="staticPart">Scoreboard</div>
             </div>
+            {{ $pseudo := .Pseudo}}
+            {{range .Scoreboard}}
+          <div class="stat" {{if eq .Position 1}} id="first" {{else if eq .Position 2}} id="second" {{else if eq .Position 3}} id="third" {{else}} id="basic-user" {{end}} {{if eq .Pseudo $pseudo}} name="currentPlayer" {{end}}>
+            <div class="dynamicPart">#{{.Position}} {{.Pseudo}}</div>
+            <div class="dynamicPart">{{.Points}}pts</div>
+          </div>
+          {{end}}
         </div>
     </div>
 </body>

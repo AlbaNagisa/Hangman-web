@@ -65,6 +65,9 @@ func main() {
 			d.Scoreboard = Functions.Podium(d)
 			d.Game = HangmanModule.SetHangman(r.URL.Query().Get("level"))
 			http.Redirect(w, r, "/jeu", http.StatusFound)
+		case "/stat":
+			d.Scoreboard = Functions.Podium(d)
+			http.Redirect(w, r, "/stats", http.StatusFound)
 		case "/disconnect":
 			if d.Logged {
 				d = HangmanModule.Session{}

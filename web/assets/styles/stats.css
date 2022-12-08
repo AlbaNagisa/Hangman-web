@@ -142,6 +142,24 @@ h1 {
   color: #ffd369;
 }
 
+#first {
+  color: #FFB400 !important;
+}
+
+#second {
+  color: #A5A5A5 !important;
+}
+
+#third {
+  color: #A36E08 !important;
+}
+
+div[name=currentPlayer] {
+  width: 87.7%;
+  height: 6.2vmin;
+  border: 3px solid #ffd369;
+}
+
 .disconnect-button {
   background-color: #393e46;
   color: #ffd369;
