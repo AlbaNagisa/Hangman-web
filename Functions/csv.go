@@ -76,7 +76,6 @@ func CsvEditor(data HangmanModule.Session) {
 	w := csv.NewWriter(file)
 	for _, line := range oldCsv {
 		if line[0] == data.Email {
-			log.Println(data.Points)
 			line[4] = strconv.Itoa(data.NLoose)
 			line[3] = strconv.Itoa(data.NWin)
 			line[5] = strconv.Itoa(data.Ratio)

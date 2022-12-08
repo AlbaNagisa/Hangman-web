@@ -1,44 +1,107 @@
 @import "./Templates/_mixin";
 @import "./Templates/variable";
 
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
 body {
-  @include body-el(0, 0, column, $backColor);
-  justify-content: center;
+  @include body-el(4%, 0, column, $backColor);
+  color: $fontColor;
+  cursor: default;
+}
+
+.button {
+  @include button(8vmin, 8vmin, $containerBackColor, $yellow);
   align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  @include button(8vmin, 8vmin, $yellow, $containerBackColor);
+}
+
+.button:hover .topLine {
+  background-color: $containerBackColor;
+}
+
+.button:hover .middleLine {
+  background-color: $containerBackColor;
+}
+
+.button:hover .bottomLine {
+  background-color: $containerBackColor;
+}
+
+.topLine {
+  @include line(2.4vmin, 0.5vmin, -40deg);
+  background-color: $yellow;
+  margin-top: -1.3vmin;
+  margin-left: -2vmin;
+  position: absolute;
+}
+
+.middleLine {
+  @include line(3vmin, 0.5vmin, 0deg);
+  background-color: $yellow;
+  position: absolute;
+}
+
+.bottomLine {
+  @include line(2.4vmin, 0.5vmin, 40deg);
+  background-color: $yellow;
+  margin-top: 1.3vmin;
+  margin-left: -2vmin;
+  position: absolute;
 }
 
 .loginContainer {
-  @include container(
-    0,
-    30vw,
-    30vh,
-    flex,
-    $containerBackColor,
-    10px,
-    $fontColor
-  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
+
+.loginTitle {
+  font-size: 10vmin;
+}
+
 .form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 100%;
+  width: 50%;
+  height: 55vh;
   align-items: center;
 }
 
 .input {
-  width: calc(100% - 44px);
-  height: calc(33% - 44px);
-  border-radius: 10px;
-  background-color: $backColor;
-  border: 1px solid black;
+  @include button(96%, 8vmin, $containerBackColor, $fontColor);
+  padding-left: 4vmin;
+  font-size: 3vmin;
+  border: 0ch;
+}
+
+.loginButtons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    color: $fontColor;
+    text-decoration: none;
+    align-items: center;
+    font-size: 4vmin;
+  }
 }
 .submit {
-  width: calc(100% - 44px);
-  height: calc(33% - 44px);
-  border-radius: 10px;
-  background-color: $backColor;
-  border: 1px solid black;
-  color: white;
-  font-size: 40px;
+  @include button(30vmin, 8vmin, $containerBackColor, $yellow);
+  border: 0px;
+  margin: 0px;
+  font-size: 4vmin;
+}
+.submit:hover {
+  background-color: $yellow;
+  color: $containerBackColor;
 }
