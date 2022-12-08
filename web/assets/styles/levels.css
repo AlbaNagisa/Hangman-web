@@ -33,6 +33,34 @@ body {
   align-items: center;
   justify-content: center;
 }
+.button .topLine {
+  width: 2.4vmin;
+  height: 0.5vmin;
+  transform: rotate(-40deg);
+  border-radius: 5vmin;
+  background-color: #ffd369;
+  margin-top: -1.3vmin;
+  margin-left: -2vmin;
+  position: absolute;
+}
+.button .middleLine {
+  width: 3vmin;
+  height: 0.5vmin;
+  transform: rotate(0deg);
+  border-radius: 5vmin;
+  background-color: #ffd369;
+  position: absolute;
+}
+.button .bottomLine {
+  width: 2.4vmin;
+  height: 0.5vmin;
+  transform: rotate(40deg);
+  border-radius: 5vmin;
+  background-color: #ffd369;
+  margin-top: 1.3vmin;
+  margin-left: -2vmin;
+  position: absolute;
+}
 
 .button:hover {
   background-color: #ffd369;
@@ -60,37 +88,6 @@ body {
   background-color: #393e46;
 }
 
-.topLine {
-  width: 2.4vmin;
-  height: 0.5vmin;
-  transform: rotate(-40deg);
-  border-radius: 5vmin;
-  background-color: #ffd369;
-  margin-top: -1.3vmin;
-  margin-left: -2vmin;
-  position: absolute;
-}
-
-.middleLine {
-  width: 3vmin;
-  height: 0.5vmin;
-  transform: rotate(0deg);
-  border-radius: 5vmin;
-  background-color: #ffd369;
-  position: absolute;
-}
-
-.bottomLine {
-  width: 2.4vmin;
-  height: 0.5vmin;
-  transform: rotate(40deg);
-  border-radius: 5vmin;
-  background-color: #ffd369;
-  margin-top: 1.3vmin;
-  margin-left: -2vmin;
-  position: absolute;
-}
-
 header {
   text-align: center;
 }
@@ -105,7 +102,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 75vmin;
+  height: 65vmin;
 }
 
 h3 {
