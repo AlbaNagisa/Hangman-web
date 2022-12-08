@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/styles/stats.css" />
+    <title>Profil</title>
+</head>
+<body>
+    <div class="header">
+      <a class="button" href="/">{{ template "Fleche" .}}</a>
+      <h1 style="margin-left: 2vmin; color: #eeeeee">Profil</h1>
+    </div>
+
+    <div class="content">
+        <div class="column">
+            <div class="stat">
+                <div class="staticPart">Pseudo</div>
+                <div class="dynamicPart">{{.Pseudo}}</div>
+            </div>
+            <div class="stat">
+                <div class="staticPart">Email</div>
+                <div class="dynamicPart">{{.Email}}</div>
+            </div>
+            <div class="stat">
+                <div class="staticPart">Points</div>
+                <div class="dynamicPart">{{.Points}}</div>
+            </div>
+            <div class="stat">
+                <div class="staticPart">Victoires</div>
+                <div class="dynamicPart">{{.NWin}}</div>
+            </div>
+            <div class="stat">
+                <div class="staticPart">Defaites</div>
+                <div class="dynamicPart">{{.NLoose}}</div>
+            </div>
+            <div class="stat">
+                <div class="staticPart">Ratio</div>
+                <div class="dynamicPart">{{.Ratio}}</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="stat">
+                <div class="staticPart">Et la le classement</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

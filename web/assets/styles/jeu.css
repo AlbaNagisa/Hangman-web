@@ -202,12 +202,6 @@ a {
   cursor: pointer;
 }
 
-.keyButton:click {
-  color: #eeeeee;
-  background-color: #393e46;
-  cursor: pointer;
-}
-
 .input {
   border-radius: 5vmin;
   width: 80%;
