@@ -7,7 +7,8 @@ type HangManData struct {
 	Tries      []string   // Lettres testees
 	Name       string     // Nom de la backup
 	Alphabet   []Alphabet //un alphabet wesh
-	Win        bool       //la partie ce termine sur une victoire ou défaite
+	Win        bool
+	Loose      bool
 	Difficulty string
 }
 

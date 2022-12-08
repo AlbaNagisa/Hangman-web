@@ -8,20 +8,20 @@ body {
 }
 
 .topPart {
-  height: 30vh;
+  height: 30vmin;
 }
 
 .middlePart {
-  height: 30vh;
+  height: 30vmin;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 5vmax;
+  padding: 5vmin;
 }
 
 .errorMessage {
-  padding-left: 3vmax;
-  font-size: 4vmax;
+  padding-left: 3vmin;
+  font-size: 4vmin;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,7 +42,7 @@ h5 {
 }
 
 .bottomPart {
-  height: 30vh;
+  height: 30vmin;
   text-align: center;
 }
 

@@ -27,13 +27,13 @@ func Podium(data HangmanModule.Session) {
 		if data.Email == i[0] {
 			if !alreadyAdded {
 				AddToScorboard(i, data)
+				if x != 0 {
+					AddToScorboard(players[x-1], data)
+				}
 			}
-			if x != 0 {
-				AddToScorboard(players[x-1], data)
-			}
+
 		}
 	}
-
 }
 
 func Sort(a *[][]string) {
@@ -63,10 +63,11 @@ func Sort(a *[][]string) {
 */
 func AddToScorboard(i []string, data HangmanModule.Session) {
 	var p HangmanModule.Player
-	//pts, _ := strconv.Atoi(i[7])
+	pts, _ := strconv.Atoi(i[7])
 	log.Println(i)
 	p = HangmanModule.Player{
 		Pseudo: i[2],
+		Points: pts,
 	}
 	data.Scoreboard = append(data.Scoreboard, p)
 }

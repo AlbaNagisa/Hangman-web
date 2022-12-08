@@ -9,65 +9,87 @@
     <title>In game</title>
   </head>
   <body>
-    {{if .Game.Win}}
-    <!-- mettre la popup de victoire -->
+    {{if .Game.Loose}}
+    <div class="popup">
+      <div class="windowPopup">
+        <div class="popupTitles">
+          <div class="popupTitle">PERDU</div>
+          <div class="popupSubTitle">Le mot etait : {{.Game.ToFind}}</div>
+        </div>
+        <div class="popupButtons">
+          <a class="yellow-button" href="/levels">
+            <h3>NOUVELLE PARTIE</h3>
+          </a>
+          <a class="white-button" href="/">
+            <h3>ACCUEIL</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+    {{else if .Game.Win}}
+    <div class="popup">
+      <div class="windowPopup">
+        <div class="popupTitles">
+          <div class="popupTitle">GAGNE</div>
+          <div class="popupSubTitle">Le mot etait : {{.Game.ToFind}}</div>
+        </div>
+        <div class="popupButtons">
+          <a class="yellow-button" href="/levels">
+            <h3>NOUVELLE PARTIE</h3>
+          </a>
+          <a class="white-button" href="/">
+            <h3>ACCUEIL</h3>
+          </a>
+        </div>
+      </div>
+    </div>
     {{end}}
-    <div class="container">
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          height: 100%;
-          align-items: center;
-        "
-      >
-        <div class="button">{{ template "Fleche" .}}</div>
-        <h1 style="margin-left: 2vw; color: #eeeeee">Partie en cours</h1>
+    <div class="left-part">
+      <div class="left-header">
+        <a class="button" href="/">{{ template "Fleche" .}}</a>
+        <h1 style="margin-left: 2vmin; color: #eeeeee">Partie en cours</h1>
       </div>
 
-      <div class="wordContainer">
-        <h2>{{.Game.Word}}</h2>
-      </div>
-      <!-- fleche + container -->
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          width: 60vw;
-          margin-top: 7vh;
-        "
-      >
-        {{range .Game.Alphabet}} {{if .Used}}
-        <a class="keyButton" href="/hangman?letter={{.}}">
-          <h2>{{.Letter}}</h2>
-        </a>
-        {{else}}
-        <a class="keyButtonUsed">
-          <h2>{{.Letter}}</h2>
-        </a>
-        {{end}} {{end}}
-      </div>
+      <div class="left-body">
+        <div class="wordContainer">
+          <h2>{{.Game.Word}}</h2>
+        </div>
+        <!-- 
+          Faire le code pour mettre la class .keyButtonAlreadyUsed sur les lettres deja utilisees
+          Code logique :
+          Pour toutes les lettres de .Game.Alphabet
+            Si {{.}} est dans .Game.Tries 
+              <p class="keyButtonAlreadyUsed">
+                <h2>{{.}}</h2>
+              </p>
+            Sinon
+              <a class="keyButton" href="/hangman?letter={{.}}">
+                <h2>{{.}}</h2>
+              </a>
+        -->
+        <div class="clavier">
+          {{range .Game.Alphabet}} {{if .Used }}
+          <a class="keyButtonUsed">
+            <h2>{{.Letter}}</h2>
+          </a>
+          {{else}}
 
-      <form
-        style="
-          display: flex;
-          flex-direction: row;
-          width: 95%;
-          margin-top: 5vh;
-          justify-content: space-between;
-        "
-        action="/hangman"
-        method="post"
-      >
-        <input
-          class="input"
-          name="word"
-          placeholder="Ecrivez un mot"
-          autocomplete="off"
-        />
-        <input type="submit" class="inputButton" />
-      </form>
+          <a class="keyButton" href="/hangman?letter={{.Letter}}">
+            <h2>{{.Letter}}</h2>
+          </a>
+          {{end}} {{end}}
+        </div>
+
+        <form action="/hangman" method="post">
+          <input
+            class="input"
+            name="word"
+            placeholder="Ecrivez un mot"
+            autocomplete="off"
+          />
+          <input type="submit" class="inputButton" value="ENTRER" />
+        </form>
+      </div>
     </div>
     <div style="height: 100%">
       {{if lt .Game.Attempts 10}}
@@ -96,5 +118,6 @@
       {{end}} {{end}}
     </div>
     <!-- scoreboard -->
+    <div></div>
   </body>
 </html>

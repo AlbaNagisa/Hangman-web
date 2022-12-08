@@ -40,7 +40,7 @@ func main() {
 			d.Email = r.FormValue("email")
 			csvFile := Functions.CsvReader()
 			for _, line := range csvFile {
-				if strings.ToLower(line[0]) == strings.ToLower(d.Email) {
+				if strings.EqualFold(strings.ToLower(line[0]), strings.ToLower(d.Email)) {
 					if d.Mdp == line[1] {
 						d.Logged = true
 						d.Email = line[0]
@@ -54,7 +54,6 @@ func main() {
 					}
 				}
 			}
-
 		}
 		switch r.URL.Path {
 		case "/":
@@ -75,6 +74,7 @@ func main() {
 				}
 			}
 			if d.Game.Attempts <= 0 {
+				d.Game.Loose = true
 				if d.Logged {
 					d.NLoose += 1
 					if d.NLoose != 0 {
@@ -125,7 +125,6 @@ func main() {
 				templateshtml.ExecuteTemplate(w, r.URL.Path[1:], d)
 			} else {
 				templateshtml.ExecuteTemplate(w, r.URL.Path[1:]+".html", d)
-
 			}
 
 		}
@@ -159,6 +158,11 @@ func check(word, input string, d *HangmanModule.HangManData) {
 				if i == len(word)-1 && !found && !foundUsed {
 					d.Attempts -= 1
 					d.Tries = append(d.Tries, input)
+				}
+			}
+			for i := 0; i < len(d.Alphabet); i++ {
+				if input == strings.ToLower(d.Alphabet[i].Letter) {
+					d.Alphabet[i].Used = true
 				}
 			}
 		}

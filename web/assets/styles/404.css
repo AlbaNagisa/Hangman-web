@@ -1,34 +1,33 @@
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
   display: flex;
-  height: 100vh;
   flex-direction: column;
   background-color: #232830;
   overflow: hidden;
   font-family: new-order, sans-serif;
   font-style: medium;
-  font-weight: 400;
   color: #eeeeee;
   justify-content: space-between;
 }
 
 .topPart {
-  height: 30vh;
+  height: 30vmin;
 }
 
 .middlePart {
-  height: 30vh;
+  height: 30vmin;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 5vmax;
+  padding: 5vmin;
 }
 
 .errorMessage {
-  padding-left: 3vmax;
-  font-size: 4vmax;
+  padding-left: 3vmin;
+  font-size: 4vmin;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,6 +48,6 @@ h5 {
 }
 
 .bottomPart {
-  height: 30vh;
+  height: 30vmin;
   text-align: center;
 }/*# sourceMappingURL=404.css.map */

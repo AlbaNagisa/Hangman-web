@@ -1,74 +1,131 @@
 @import "./Templates/mixin";
 @import "./Templates/variable";
 
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
 body {
-  @include body-el(0, 0, row, $backColor);
+  @include body-el(4%, 0, row, $backColor);
 }
 
-.button {
-  @include container(0, 7vh, 7vh, flex, $containerBackColor, 40px, $fontColor);
-  align-items: center;
-  justify-content: center;
-}
-
-.container {
-  width: 60vw;
+.left-part {
+  width: 60%;
+  height: 100%;
   color: $fontColor;
   display: flex;
   background-color: $backColor;
-  margin-top: 4vh;
   flex-direction: column;
-  margin-left: 3vw;
-  margin-bottom: 4vh;
 }
-.wordContainer {
-  @include container(0, 58vw, 10vh, flex, $containerBackColor, 0, $fontColor);
-  margin-top: 5vh;
-  border-radius: 5rem;
+
+.right-part {
+  width: 40%;
+  color: $fontColor;
+  display: flex;
+  background-color: $backColor;
+  flex-direction: column;
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
+}
+
+.left-body {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.button {
+  @include button(8vmin, 8vmin, $containerBackColor, $yellow);
   align-items: center;
   justify-content: center;
-  h2 {
-    font-size: 5rem;
-    letter-spacing: 1rem;
+  .topLine {
+    @include line(2.4vmin, 0.5vmin, -40deg);
+    background-color: $yellow;
+    margin-top: -1.3vmin;
+    margin-left: -2vmin;
+    position: absolute;
+  }
+
+  .middleLine {
+    @include line(3vmin, 0.5vmin, 0deg);
+    background-color: $yellow;
+    position: absolute;
+  }
+
+  .bottomLine {
+    @include line(2.4vmin, 0.5vmin, 40deg);
+    background-color: $yellow;
+    margin-top: 1.3vmin;
+    margin-left: -2vmin;
+    position: absolute;
   }
 }
 
+.button:hover {
+  @include button(8vmin, 8vmin, $yellow, $containerBackColor);
+}
+
+.button:hover .topLine {
+  background-color: $containerBackColor;
+}
+
+.button:hover .middleLine {
+  background-color: $containerBackColor;
+}
+
+.button:hover .bottomLine {
+  background-color: $containerBackColor;
+}
+
+.clavier {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  h2 {
+    letter-spacing: 0px;
+  }
+}
+
+.wordContainer {
+  @include container(0, 96%, 10vh, flex, $containerBackColor, $fontColor);
+  border-radius: 5vmin;
+  align-items: center;
+  justify-content: center;
+  font-style: bold;
+}
+
 h1 {
-  font-size: 5rem;
+  font-size: 7vmin;
   overflow-wrap: break-word;
+  margin: 0;
+}
+
+h2 {
+  margin: 0px;
+  font-size: 5vmin;
+  justify-content: center;
+  letter-spacing: 1vmin;
 }
 
 a {
-  font-size: 2rem;
+  font-size: 2vmin;
   text-decoration: none;
 }
 
-.topLine {
-  @include line(1.5rem, 0.3rem, -35deg);
-  background-color: white;
-  margin-top: -0.8rem;
-  margin-left: -1.2rem;
-  position: absolute;
-}
-.middleLine {
-  @include line(2rem, 0.3rem, 0deg);
-  background-color: white;
-  position: absolute;
-}
-
-.bottomLine {
-  @include line(1.5rem, 0.3rem, 35deg);
-  background-color: white;
-  margin-top: 0.6rem;
-  margin-left: -1.2rem;
-  position: absolute;
-}
-
 .keyButton {
-  @include container(0, 7vh, 7vh, flex, $yellow, 40px, $fontColor);
-  justify-content: center;
+  @include button(7vmin, 7vmin, $yellow, $fontColor);
   align-items: center;
-  margin: 2vh;
+  margin: 1vmin;
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
 }
 
 .keyButton:hover {
@@ -77,26 +134,123 @@ a {
   cursor: pointer;
 }
 
-.input {
-  border-radius: 3rem;
-  width: 80%;
-  background-color: $containerBackColor;
-  color: $fontColor;
-  font-size: 4rem;
-  text-align: center;
-  border: none;
+.keyButtonUsed {
+  @include button(7vmin, 7vmin, $containerBackColor, $fontColor);
+  align-items: center;
+  margin: 1vmin;
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
 }
-.inputButton {
-  background-color: $containerBackColor;
-  border: none;
-  color: $fontColor;
-  font-size: 3rem;
-  border-radius: 3rem;
-  padding: 1vh;
+
+.input {
+  border-radius: 5vmin;
+  width: 80%;
+  height: 8vmin;
+  background-color: $fontColor;
+  color: $backColor;
+  font-size: 3vmin;
   text-align: center;
+  border: none;
+  box-shadow: (8vmin/15) (8vmin/15) rgba(0, 0, 0, 0.27);
+}
+
+.inputButton {
+  @include button(25vmin, 8vmin, $fontColor, $backColor);
+  font-size: 3.5vmin;
+  margin: 0px;
+  margin-left: 2vmin;
+  text-align: center;
+  border: none;
 }
 
 .inputButton:hover {
-  background-color: $yellow;
+  background-color: $containerBackColor;
+  color: $yellow;
   cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  width: 98%;
+  justify-content: space-between;
+}
+
+.popup {
+  background: #2328301e;
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100vh;
+  width: 100vw;
+  .windowPopup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: $fontColor;
+    height: 75%;
+    width: 75%;
+    border-radius: 10vmin;
+    background-color: $containerBackColor;
+  }
+}
+
+.popupTitle {
+  margin: 0px;
+  font-size: 15vmin;
+}
+
+.popupTitles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupSubTitle {
+  margin: 0px;
+  font-size: 5vmin;
+  color: $yellow;
+}
+
+.popupButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.yellow-button {
+  @include button(45vmin, 10vmin, $yellow, $fontColor);
+  text-decoration: none;
+}
+
+.yellow-button:hover {
+  @include button(45vmin, 10vmin, $containerBackColor, $yellow);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.white-button {
+  @include button(45vmin, 10vmin, $fontColor, $yellow);
+  text-decoration: none;
+}
+
+.white-button:hover {
+  @include button(45vmin, 10vmin, $containerBackColor, $fontColor);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h3 {
+  margin: 0px;
+  align-items: center;
+  display: flex;
+  font-size: 4vmin;
 }
