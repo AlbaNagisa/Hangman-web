@@ -16,6 +16,7 @@ body {
   font-style: medium;
   overflow: visible;
   flex-wrap: wrap;
+  cursor: default;
 }
 
 .left-part {
