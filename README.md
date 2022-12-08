@@ -4,9 +4,13 @@ Bonjour chers mentors voici le readme de notre projet ainsi que quelque spécifi
 
 ## FAQ
 
-#### Où est notre projet ?
+#### Qu'est ce que ce jeu ?
 
-Vous le trouverez à l'adresse suivante : https://github.com/AlbaNagisa/Hangman-web
+Ce jeu est un jeu du pendu.
+Vous savez, ce jeu auquel nous avons tous joue pendant nos annees d'etudes pour faire passer le temps.
+Eh bien ici c'est nous qui vous faisons deviner un mot aleatoirement parmis notre banque de mots.
+Amusez vous bien ;)
+Soyez attentifs des fonctionnalites sont peut etre cachees ici ou la ...
 
 #### Comment lancer le jeu ?
 
