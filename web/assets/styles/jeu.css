@@ -414,4 +414,51 @@ h3 {
   transform: rotate(90deg);
   border-radius: 5vmin;
   background-color: #ffd369;
+}
+
+.scoreboard {
+  display: flex;
+  width: 100%;
+  height: 40vmin;
+  padding-top: 5vmin;
+  padding-bottom: 5vmin;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scoreboardUser {
+  margin: 0px;
+  width: 35vmin;
+  color: #ffd369;
+  height: 6vmin;
+  display: flex;
+  background-color: #393e46;
+  border-radius: 3vmin;
+  box-shadow: 0.6vmin 0.6vmin rgba(0, 0, 0, 0.27);
+  padding-left: 2vmin;
+  padding-right: 2vmin;
+  justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+}
+.scoreboardUser h3 {
+  font-size: 3vmin;
+}
+
+#first {
+  color: #FFB400;
+}
+
+#second {
+  color: #A5A5A5;
+}
+
+#third {
+  color: #A36E08;
+}
+
+#current-player {
+  background-color: #ffd369;
+  color: #393e46;
 }/*# sourceMappingURL=jeu.css.map */

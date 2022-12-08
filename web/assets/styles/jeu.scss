@@ -285,3 +285,43 @@ h3 {
   @include line(0.4vmin, 20vmin, 90deg);
   background-color: $yellow;
 }
+
+.scoreboard {
+  display: flex; 
+  width: 100%;
+  height: 40vmin;
+  padding-top: 5vmin;
+  padding-bottom: 5vmin;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scoreboardUser {
+  @include container(35vmin, 6vmin, 3vmin, $containerBackColor, $yellow, 0.6vmin);
+  padding-left: 2vmin;
+  padding-right: 2vmin;
+  justify-content: space-between;
+  display: flex; 
+  justify-content: space-between;
+  h3 {
+    font-size: 3vmin;
+  }
+}
+
+#first {
+  color: #FFB400;
+}
+
+#second {
+  color: #A5A5A5;
+}
+
+#third {
+  color: #A36E08;
+}
+
+#current-player {
+  background-color: $yellow;
+  color: $containerBackColor;
+}
