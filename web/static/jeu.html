@@ -109,7 +109,7 @@
       {{ $pseudo := .Pseudo}}
       <div class="scoreboard">
         {{range .Scoreboard}}
-        <div class="scoreboardUser" {{if eq .Position 1}} id="first" {{else if eq .Position 2}} id="second" {{else if eq .Position 3}} id="third" {{else if eq .Pseudo $pseudo}} id="current-player" {{else}} id="basic-user" {{end}}>
+        <div class="scoreboardUser" {{if eq .Position 1}} id="first" {{else if eq .Position 2}} id="second" {{else if eq .Position 3}} id="third" {{else}} id="basic-user" {{end}} {{if eq .Pseudo $pseudo}} name="currentPlayer" {{end}}>
           <h3>#{{.Position}} {{.Pseudo}}</h3>
           <h3>{{.Points}}pts</h3>
         </div>
