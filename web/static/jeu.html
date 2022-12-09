@@ -126,14 +126,14 @@
           .Position
           3}}
           id="third"
-          {{else
-          if
-          eq
-          .Pseudo
-          $pseudo}}
-          id="current-player"
           {{else}}
           id="basic-user"
+          {{end}}
+          {{if
+            eq
+            .Pseudo
+            $pseudo}}
+            name="currentPlayer"
           {{end}}
         >
           <h3>#{{.Position}} {{.Pseudo}}</h3>
